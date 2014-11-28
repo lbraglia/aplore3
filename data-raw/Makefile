@@ -1,2 +1,6 @@
+R = R CMD BATCH --no-timing --quiet --vanilla
+
+
 all:
-	R --vanilla CMD BATCH chdage.R
+	$(R) chdage.R
+	$(R) burn.R

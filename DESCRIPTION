@@ -3,9 +3,10 @@ Title: "Applied Logistic Regression" (3rd ed.) dataset
 Version: 0.1
 Authors@R: "Luca Braglia <lbraglia@gmail.com> [aut, cre]"
 Description: This package is a 'unofficial' companion to the textbook by Hosmer
-Lemeshow Sturdivant "Applied Logistic Regression" (3rd ed., 2013). It includes
-all the data sets used in the book to make even more quick/simple to reproduce
-analysis from R.
-Depends: R (>= 3.1.1)
+    Lemeshow Sturdivant "Applied Logistic Regression" (3rd ed., 2013). It
+    includes all the data sets used in the book to make even more
+    quick/simple to reproduce analysis from R.
+Depends:
+    R (>= 3.1.1)
 License: GPL-3
 LazyData: true
