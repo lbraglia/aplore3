@@ -1,0 +1,41 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+
+% \VignetteEngine{knitr::knitr}
+% \VignetteIndexEntry{aplore3 package: Datasets from Hosmer, Lemeshow, Sturdivant "Applied Logistic Regression'' (3rd ed.)}
+% \VignetteDepends{aplore3}
+% \VignetteKeyword{hosmer}
+% \VignetteKeyword{lemeshow}
+% \VignetteKeyword{sturdivant}
+% \VignetteKeyword{applied}
+% \VignetteKeyword{logistic}
+% \VignetteKeyword{regression}
+
+\begin{document}
+\title{\texttt{aplore3} package}
+\author{Luca Braglia}
+\maketitle
+<<setup, include=FALSE, cache=FALSE>>=
+
+library(knitr)
+opts_chunk$set(fig.align = 'center' )
+knit_hooks$set(inline = function(x) { if (is.numeric(x)) round(x,3) })
+set.seed(13141712)
+options(width=60)
+library(aplore3)
+
+@ 
+
+\section{\texttt{chdage} dataset}
+<<>>=
+example(chdage)
+@ 
+
+\section{\texttt{sessionInfo}}
+<<>>=
+sessionInfo()
+@ 
+
+\end{document}
