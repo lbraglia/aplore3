@@ -3,7 +3,7 @@
 \name{chdage}
 \alias{chdage}
 \title{CHDAGE data}
-\format{A data frame with 53940 rows and 10 variables:
+\format{A data frame with 100 rows and 3 variables:
 \describe{
    \item{id}{Identification code}
    \item{age}{Years}
