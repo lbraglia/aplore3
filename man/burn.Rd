@@ -21,5 +21,8 @@ burn
 \description{
 burn dataset.
 }
+\examples{
+burn
+}
 \keyword{datasets}
 

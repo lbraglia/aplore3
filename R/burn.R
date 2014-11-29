@@ -14,4 +14,6 @@
 #' \item{inh_inj}{Burn involved inhalation injury}
 #' \item{flame}{Flame involved in burn injury}
 #' }
+#' @examples
+#' burn
 "burn"
