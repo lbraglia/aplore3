@@ -17,8 +17,7 @@ chdage
 chdage dataset.
 }
 \examples{
-## Table 1.1
-chdage
+head(chdage)
 
 ## Figure 1.1
 plot(as.integer(chd)-1 ~ age,
