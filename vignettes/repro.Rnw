@@ -1,0 +1,36 @@
+\documentclass[a4paper, 11pt]{book}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+
+% \VignetteEngine{knitr::knitr}
+% \VignetteIndexEntry{Reproducing ``Applied Logistic Regression'' with R}
+% \VignetteDepends{aplore3}
+% \VignetteDepends{knitr}
+% \VignetteKeyword{hosmer}
+% \VignetteKeyword{lemeshow}
+% \VignetteKeyword{sturdivant}
+% \VignetteKeyword{applied}
+% \VignetteKeyword{logistic}
+% \VignetteKeyword{regression}
+
+\begin{document}
+\title{Reproducing ``Applied Logistic Regression'' with R}
+%% \author{Luca Braglia}
+%% \maketitle
+\tableofcontents
+
+<<setup, include=FALSE>>=
+library(knitr)
+opts_chunk$set(fig.align = 'center' )
+knit_hooks$set(inline = function(x) { if (is.numeric(x)) round(x,3) })
+set.seed(13141712)
+options(width = 75)
+library(aplore3)
+@ 
+
+%% Intro here
+
+\Sexpr{knit_child("ch/01_intro.Rnw")}
+
+\end{document}

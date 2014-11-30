@@ -1,0 +1,13 @@
+\chapter{Introduction to the Logistic Regression Model}
+
+lala
+
+<<asd>>=
+library(aplore3)
+example(chdage)
+@ 
+
+
+<<foo>>=
+rnorm(100)
+@ 
