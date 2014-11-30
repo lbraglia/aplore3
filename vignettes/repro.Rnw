@@ -31,14 +31,14 @@ options(width = 75)
 
 \Sexpr{knit_child("ch/01_intro.Rnw")}
 \Sexpr{knit_child("ch/02_multipleRegression.Rnw")}
-\Sexpr{knit_child("ch/03_interpretation.Rnw")}
-\Sexpr{knit_child("ch/04_modelBuilding.Rnw")}
-\Sexpr{knit_child("ch/05_assessingFit.Rnw")}
-\Sexpr{knit_child("ch/06_differentSampling.Rnw")}
-\Sexpr{knit_child("ch/07_matchedCaseControl.Rnw")}
-\Sexpr{knit_child("ch/08_multinomialOrdered.Rnw")}
-\Sexpr{knit_child("ch/09_correlatedData.Rnw")}
-\Sexpr{knit_child("ch/10_specialTopics.Rnw")}
+%% \Sexpr{knit_child("ch/03_interpretation.Rnw")}
+%% \Sexpr{knit_child("ch/04_modelBuilding.Rnw")}
+%% \Sexpr{knit_child("ch/05_assessingFit.Rnw")}
+%% \Sexpr{knit_child("ch/06_differentSampling.Rnw")}
+%% \Sexpr{knit_child("ch/07_matchedCaseControl.Rnw")}
+%% \Sexpr{knit_child("ch/08_multinomialOrdered.Rnw")}
+%% \Sexpr{knit_child("ch/09_correlatedData.Rnw")}
+%% \Sexpr{knit_child("ch/10_specialTopics.Rnw")}
 
 
 \end{document}

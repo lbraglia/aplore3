@@ -1,1 +1,10 @@
 \chapter{The Multiple Logistic Regression Model}
+
+<<>>=
+
+## Table 2.2
+summary(glm(fracture ~ age + weight + priorfrac + premeno + raterisk,
+            family = binomial,
+            data = glow500))
+
+@ 
