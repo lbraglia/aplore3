@@ -1,0 +1,25 @@
+> 
+> source("utils.r")
+> glow500 <- read.table(file = "GLOW/GLOW500.txt",
++                       as.is = TRUE,
++                       header = TRUE)
+> names(glow500) <- tolower(names(glow500))
+> raterisk.label <- list(`long` = c("Less than others of the same age",
++                        "Same as others of the same age",
++                        "Greater than others of the same age") ,
++                        `short`= c("Less","Same","Greater"))
+> 
+> glow500 <- within(glow500, {
++   priorfrac <- noYes(priorfrac)
++   premeno <- noYes(premeno)
++   momfrac <- noYes(momfrac)
++   armassist <- noYes(armassist)
++   smoke <- noYes(smoke)
++   raterisk <- factor(raterisk, levels = o3,
++                      labels = raterisk.label[["short"]])
++   fracture <- noYes(fracture)
++ })
+Errore in factor(x, levels = zo, labels = c("No", "Yes")) : 
+  oggetto "zo" non trovato
+Calls: within ... within.data.frame -> eval -> eval -> noYes -> factor
+Esecuzione interrotta
