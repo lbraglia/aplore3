@@ -19,6 +19,8 @@
 + })
 > lowbwt <- lowbwt[order(lowbwt$id), ]
 > rownames(lowbwt) <- NULL
+> dim(lowbwt)
+[1] 189  11
 > summary(lowbwt)
        id               low           age             lwt           race   
  Min.   :  4.0   >= 2500 g:130   Min.   :14.00   Min.   : 80.0   White:96  

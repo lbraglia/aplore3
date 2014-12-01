@@ -14,7 +14,7 @@
 > ph.label <- c(">= 7.25","< 7.25")
 > pco.label <- c("<= 45", "> 45")
 > bic.label <- c(">= 18", "< 18")
-> cre.label <- c("≤ 2.0", "> 2.0")
+> cre.label <- c("<= 2.0", "> 2.0")
 > loc.label <- c("No coma or deep stupor", "Deep stupor", "Coma")
 > 
 > icu <- within(icu, {
@@ -38,6 +38,8 @@
 + })
 > icu <- icu[order(icu$id), ]
 > rownames(icu) <- NULL
+> dim(icu)
+[1] 200  21
 > summary(icu)
        id           sta           age           gender       race    
  Min.   :  4.0   Died :160   Min.   :16.00   Male  :124   White:175  
@@ -60,13 +62,13 @@
  Mean   : 98.92                                                                
  3rd Qu.:118.25                                                                
  Max.   :192.00                                                                
-    pco         bic         cre                          loc     
- <= 45:180   >= 18:185   ≤ 2.0:190   No coma or deep stupor:185  
- > 45 : 20   < 18 : 15   > 2.0: 10   Deep stupor           :  5  
-                                     Coma                  : 10  
-                                                                 
-                                                                 
-                                                                 
+    pco         bic          cre                          loc     
+ <= 45:180   >= 18:185   <= 2.0:190   No coma or deep stupor:185  
+ > 45 : 20   < 18 : 15   > 2.0 : 10   Deep stupor           :  5  
+                                      Coma                  : 10  
+                                                                  
+                                                                  
+                                                                  
 > 
 > save("icu", file = "../data/icu.rda")
 > 

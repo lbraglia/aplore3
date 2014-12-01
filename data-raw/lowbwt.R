@@ -19,6 +19,7 @@ lowbwt <- within(lowbwt, {
 })
 lowbwt <- lowbwt[order(lowbwt$id), ]
 rownames(lowbwt) <- NULL
+dim(lowbwt)
 summary(lowbwt)
 
 save("lowbwt", file = "../data/lowbwt.rda")

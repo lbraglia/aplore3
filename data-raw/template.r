@@ -11,6 +11,7 @@ dataset <- within(dataset, {
 })
 dataset <- dataset[order(dataset$id), ]
 rownames(dataset) <- NULL
+dim(dataset)
 summary(dataset)
 
 save("dataset", file = "../data/dataset.rda")

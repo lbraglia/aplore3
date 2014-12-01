@@ -32,6 +32,7 @@ aps <- within(aps, {
 })
 aps <- aps[order(aps$id), ]
 rownames(aps) <- NULL
+dim(aps)
 summary(aps)
 
 save("aps", file = "../data/aps.rda")

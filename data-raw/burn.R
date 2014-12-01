@@ -18,6 +18,7 @@ burn1000 <- within(burn1000, {
 })
 burn1000 <- burn1000[order(burn1000$id), ]
 rownames(burn1000) <- NULL
+dim(burn1000)
 summary(burn1000)
 
 save("burn1000", file = "../data/burn1000.rda")

@@ -14,7 +14,7 @@ po2.label <- c("> 60","<= 60")
 ph.label <- c(">= 7.25","< 7.25")
 pco.label <- c("<= 45", "> 45")
 bic.label <- c(">= 18", "< 18")
-cre.label <- c("≤ 2.0", "> 2.0")
+cre.label <- c("<= 2.0", "> 2.0")
 loc.label <- c("No coma or deep stupor", "Deep stupor", "Coma")
 
 icu <- within(icu, {
@@ -38,6 +38,7 @@ icu <- within(icu, {
 })
 icu <- icu[order(icu$id), ]
 rownames(icu) <- NULL
+dim(icu)
 summary(icu)
 
 save("icu", file = "../data/icu.rda")

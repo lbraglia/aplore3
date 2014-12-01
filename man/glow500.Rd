@@ -5,21 +5,23 @@
 \title{GLOW500 data}
 \format{A data frame with 500 rows and 15 variables:
 \describe{
-\item{sub_id}{Identification Code}
-\item{site_id}{Study Site}
-\item{phy_id}{Physician ID code}
-\item{priorfrac}{History of Prior Fracture}
+\item{sub_id}{Identification Code (1 - n)}
+\item{site_id}{Study Site (1 - 6)}
+\item{phy_id}{Physician ID code (128 unique codes)}
+\item{priorfrac}{History of Prior Fracture (1: No, 2: Yes)}
 \item{age}{Age at Enrollment (Years)}
 \item{weight}{Weight at enrollment (Kilograms)}
 \item{height}{Height at enrollment (Centimeters)}
 \item{bmi}{Body Mass Index (Kg/m^2)}
-\item{premeno}{Menopause before age 45}
-\item{momfrac}{Mother had hip fracture}
-\item{armassist}{Arms are needed to stand from a chair}
-\item{smoke}{Former or current smoker}
-\item{raterisk}{Self-reported risk of fracture}
+\item{premeno}{Menopause before age 45 (1: No, 2: Yes)}
+\item{momfrac}{Mother had hip fracture (1: No, 2: Yes)}
+\item{armassist}{Arms are needed to stand from a chair (1: No, 2: Yes)}
+\item{smoke}{Former or current smoker (1: No, 2: Yes)}
+\item{raterisk}{Self-reported risk of fracture (1: Less than others of
+the same age, 2: Same as others of the same age, 3: Greater than others
+of the same age)}
 \item{fracscore}{Fracture Risk Score (Composite Risk Score)}
-\item{fracture}{Any fracture in first year}
+\item{fracture}{Any fracture in first year (1: No, 2: Yes)}
 }}
 \usage{
 glow500
@@ -29,6 +31,7 @@ glow500 dataset.
 }
 \examples{
 head(glow500, n = 10)
+summary(glow500)
 
 ## Table 2.2
 summary(glm(fracture ~ age + weight + priorfrac + premeno + raterisk,

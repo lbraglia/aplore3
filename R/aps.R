@@ -4,26 +4,26 @@
 #' 
 #' @format A data frame with XXX rows and 11 variables:
 #' \describe{
-#' \item{id}{Identification Code}
-#' \item{place}{Placement (0 = Outpatient, 1 = Day Treatment, 2 =
-#' Intermediate Residential, 3 = Residential)}
-#' \item{place3}{Placement Combined (0 = Outpatient or Day Treatment, 1 =
-#' Intermediate Residential, 2 = Residential )}
+#' \item{id}{Identification Code (1 - 508)}
+#' \item{place}{Placement (1: Outpatient, 2: Day Treatment, 3:
+#' Intermediate Residential, 4: Residential)}
+#' \item{place3}{Placement Combined (1: Outpatient or Day Treatment, 2:
+#' Intermediate Residential, 3: Residential )}
 #' \item{age}{Age at Admission (Years)}
-#' \item{race}{Race (0 = White, 1 = Non-white)}
-#' \item{gender}{Gender (0 = Female, 1 = Male)}
-#' \item{neuro}{Neuropsychiatric Disturbance (0 = None, 1 = Mild, 2 =
-#' Moderate, 3 = Severe)}
-#' \item{emot}{Emotional Disturbance (0 = Not Severe, 1 = Severe) }
-#' \item{danger}{Danger to Others (0 = Unlikely, 1 =
-#' Possible, 2 = Probable, 3 = Likely)}
-#' \item{elope}{Elopement Risk (0 = No Risk, 1 = At Risk)}
+#' \item{race}{Race (1: White, 2: Non-white)}
+#' \item{gender}{Gender (1: Female, 2: Male)}
+#' \item{neuro}{Neuropsychiatric Disturbance (1: None, 2: Mild, 3:
+#' Moderate, 4: Severe)}
+#' \item{emot}{Emotional Disturbance (1: Not Severe, 2: Severe) }
+#' \item{danger}{Danger to Others (1: Unlikely, 2:
+#' Possible, 3: Probable, 4: Likely)}
+#' \item{elope}{Elopement Risk (1: No Risk, 2: At Risk)}
 #' \item{los}{Length of Hospitalization (Days)}
 #' \item{behav}{Behavioral Symptoms Score (0 - 9)}
-#' \item{custd}{State Custody (0 = No, 1 = Yes)}
-#' \item{viol}{History of Violence (0 = No, 1 = Yes)}
+#' \item{custd}{State Custody (1: No, 2: Yes)}
+#' \item{viol}{History of Violence (1: No, 2: Yes)}
 #' }
 #' @examples
 #' head(aps, n = 10)
-#'
+#' summary(aps)
 "aps"

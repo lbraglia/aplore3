@@ -21,6 +21,8 @@
 + })
 > glow500 <- glow500[order(glow500$sub_id), ]
 > rownames(glow500) <- NULL
+> dim(glow500)
+[1] 500  15
 > summary(glow500)
      sub_id         site_id          phy_id       priorfrac      age       
  Min.   :  1.0   Min.   :1.000   Min.   :  1.00   No :374   Min.   :55.00  

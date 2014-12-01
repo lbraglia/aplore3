@@ -4,14 +4,16 @@
 #' 
 #' @format A data frame with 100 rows and 3 variables:
 #' \describe{
-#'    \item{id}{Identification code}
-#'    \item{age}{Age (years)}
-#'    \item{agegrp}{Age group}
-#'    \item{chd}{Presence of CHD}
+#' \item{id}{Identification code (1 - 100)}
+#' \item{age}{Age (Years)}
+#' \item{agegrp}{Age group (1: 20-39, 2: 30-34, 3: 35-39, 4: 40-44, 5:
+#' 45-49, 6: 50-54, 7: 55-59, 8: 60-69)}  
+#' \item{chd}{Presence of CHD (1: No, 2: Yes)}
 #' }
 #' @examples
 #' head(chdage,  n = 10)
-#'
+#' summary(chdage)
+#' 
 #' ## Figure 1.1
 #' plot(as.integer(chd)-1 ~ age,
 #'      pch = 20,

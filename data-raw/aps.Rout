@@ -32,6 +32,8 @@
 + })
 > aps <- aps[order(aps$id), ]
 > rownames(aps) <- NULL
+> dim(aps)
+[1] 508  14
 > summary(aps)
        id                             place    
  Min.   :  1.0   Outpatient              :155  

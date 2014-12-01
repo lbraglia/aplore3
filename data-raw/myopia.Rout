@@ -1,0 +1,50 @@
+> 
+> source("utils.r")
+> myopia <- read.table(file = "MYOPIA/MYOPIA.txt",
++                       as.is = TRUE,
++                       header = TRUE)
+> names(myopia) <- tolower(names(myopia))
+> gender.label <- c("Male","Female")
+> 
+> myopia <- within(myopia, {
++   myopic <- noYes(myopic)
++   gender <- factor(gender, levels = z1, gender.label)
++   mommy <- noYes(mommy)
++   dadmy <- noYes(dadmy)
++ })
+> myopia <- myopia[order(myopia$id), ]
+> rownames(myopia) <- NULL
+> dim(myopia)
+[1] 618  18
+> summary(myopia)
+       id          studyyear    myopic         age           gender   
+ Min.   :  1.0   Min.   :1990   No :537   Min.   :5.000   Male  :316  
+ 1st Qu.:155.2   1st Qu.:1991   Yes: 81   1st Qu.:6.000   Female:302  
+ Median :309.5   Median :1992             Median :6.000               
+ Mean   :309.5   Mean   :1992             Mean   :6.299               
+ 3rd Qu.:463.8   3rd Qu.:1994             3rd Qu.:6.000               
+ Max.   :618.0   Max.   :1995             Max.   :9.000               
+     spheq               al             acd              lt       
+ Min.   :-0.6990   Min.   :19.90   Min.   :2.772   Min.   :2.960  
+ 1st Qu.: 0.4562   1st Qu.:22.04   1st Qu.:3.424   1st Qu.:3.436  
+ Median : 0.7290   Median :22.46   Median :3.585   Median :3.542  
+ Mean   : 0.8010   Mean   :22.50   Mean   :3.579   Mean   :3.541  
+ 3rd Qu.: 1.0340   3rd Qu.:22.97   3rd Qu.:3.730   3rd Qu.:3.640  
+ Max.   : 4.3720   Max.   :24.56   Max.   :4.250   Max.   :4.112  
+      vcd           sporthr          readhr           comphr      
+ Min.   :13.38   Min.   : 0.00   Min.   : 0.000   Min.   : 0.000  
+ 1st Qu.:14.93   1st Qu.: 6.00   1st Qu.: 0.000   1st Qu.: 0.000  
+ Median :15.36   Median :10.00   Median : 2.000   Median : 1.000  
+ Mean   :15.38   Mean   :11.95   Mean   : 2.796   Mean   : 2.105  
+ 3rd Qu.:15.84   3rd Qu.:16.00   3rd Qu.: 4.000   3rd Qu.: 3.000  
+ Max.   :17.30   Max.   :45.00   Max.   :20.000   Max.   :30.000  
+    studyhr           tvhr          diopterhr      mommy     dadmy    
+ Min.   : 0.00   Min.   : 0.000   Min.   :  2.00   No :305   No :310  
+ 1st Qu.: 0.00   1st Qu.: 4.250   1st Qu.: 15.00   Yes:313   Yes:308  
+ Median : 1.00   Median : 8.000   Median : 23.00                      
+ Mean   : 1.49   Mean   : 8.948   Mean   : 26.02                      
+ 3rd Qu.: 2.00   3rd Qu.:12.000   3rd Qu.: 34.00                      
+ Max.   :15.00   Max.   :31.000   Max.   :101.00                      
+> 
+> save("myopia", file = "../data/myopia.rda")
+> 

@@ -6,16 +6,16 @@
 \format{A data frame with XXX rows and 11 variables:
 \describe{
 \item{id}{Identification Code}
-\item{low}{Low birth weight (0: >= 2500, 1: < 2500 g)}
+\item{low}{Low birth weight (1: >= 2500, 2: < 2500 g)}
 \item{age}{Age of mother (Years)}
 \item{lwt}{Weight of mother at last menstrual period (Pounds)}
 \item{race}{Race (1: White, 2: Black, 3: Other)}
-\item{smoke}{Smoking status during pregnancy (0: No, 1: Yes)}
-\item{ptl}{History of premature labor (0: None, 1: One, 2: Two, etc)}
-\item{ht}{History of hypertension (0: No, 1: Yes)}
-\item{ui}{Presence of Uterine irritability (0: No, 1: Yes)}
-\item{ftv}{Number of physician visits during the first trimester (0:
-None, 1: One, 2: Two, etc)}
+\item{smoke}{Smoking status during pregnancy (1: No, 2: Yes)}
+\item{ptl}{History of premature labor (1: None, 2: One, 3: Two, etc)}
+\item{ht}{History of hypertension (1: No, 2: Yes)}
+\item{ui}{Presence of Uterine irritability (1: No, 2: Yes)}
+\item{ftv}{Number of physician visits during the first trimester (1:
+None, 2: One, 3: Two, etc)}
 \item{bwt}{Recorded birth weight (Grams)}
 }}
 \usage{
@@ -26,6 +26,7 @@ lowbwt dataset.
 }
 \examples{
 head(lowbwt, n = 10)
+summary(lowbwt)
 }
 \keyword{datasets}
 

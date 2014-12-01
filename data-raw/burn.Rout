@@ -18,6 +18,8 @@
 + })
 > burn1000 <- burn1000[order(burn1000$id), ]
 > rownames(burn1000) <- NULL
+> dim(burn1000)
+[1] 1000    9
 > summary(burn1000)
        id            facility       death          age           gender   
  Min.   :   1.0   Min.   : 1.00   Alive:850   Min.   : 0.10   Female:295  
