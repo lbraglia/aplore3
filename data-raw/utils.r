@@ -10,4 +10,6 @@ o4 <- 1:4
 o5 <- 1:5
 o6 <- 1:6
 ## A common coding function
-noYes <- function(x) factor(x, levels = z1, labels = c("No","Yes"))
+no.yes.label <- c("No","Yes")
+noYes <- function(x) factor(x, levels = z1, labels = no.yes.label)
+yesNo <- function(x) factor(x, levels = z1, labels = rev(no.yes.label))

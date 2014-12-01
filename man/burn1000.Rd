@@ -3,7 +3,7 @@
 \name{burn1000}
 \alias{burn1000}
 \title{BURN1000 data}
-\format{A data frame with 100 rows and 9 variables:
+\format{A data frame with 1000 rows and 9 variables:
 \describe{
 \item{id}{Identification code (1 - 1000)}
 \item{facility}{Burn facility (1 - 40)}

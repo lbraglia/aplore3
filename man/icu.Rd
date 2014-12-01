@@ -15,7 +15,7 @@
 \item{crn}{History of chronic renal failure (1: No, 2: Yes)}
 \item{inf}{Infection probable at ICU admission (1: No, 2: Yes)}
 \item{cpr}{CPR prior to ICU admission (1: No, 2: Yes)}
-\item{sys}{Systolic blood pressure at ICU admission (mmHg)}
+\item{sys}{Systolic blood pressure at ICU admission (mm Hg)}
 \item{hra}{Heart rate at ICU admission (Beats/min)}
 \item{pre}{Previous admission to an ICU within 6 months (1: No, 2: Yes)}
 \item{type}{Type of admission (1: Elective, 2: Emergency)}
