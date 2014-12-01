@@ -15,7 +15,7 @@ glow500 <- within(glow500, {
   momfrac <- noYes(momfrac)
   armassist <- noYes(armassist)
   smoke <- noYes(smoke)
-  raterisk <- factor(raterisk, levels = 1:3,
+  raterisk <- factor(raterisk, levels = o3,
                      labels = raterisk.label[["short"]])
   fracture <- noYes(fracture)
 })
