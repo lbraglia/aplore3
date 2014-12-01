@@ -1,23 +1,25 @@
 
+source("utils.r")
 glow500 <- read.table(file = "GLOW/GLOW500.txt",
                       as.is = TRUE,
                       header = TRUE)
 names(glow500) <- tolower(names(glow500))
-no.yes <- c("No","Yes")
 raterisk.label <- list(`long` = c("Less than others of the same age",
                        "Same as others of the same age",
                        "Greater than others of the same age") ,
                        `short`= c("Less","Same","Greater"))
-glow500 <- within(glow500, {
-         priorfrac <- factor(priorfrac, levels = 0:1, labels = no.yes)
-         premeno <- factor(premeno, levels = 0:1, labels = no.yes)
-         momfrac <- factor(momfrac, levels = 0:1, labels = no.yes)
-         armassist <- factor(armassist, levels = 0:1, labels = no.yes)
-         smoke <- factor(smoke, levels = 0:1, labels = no.yes)
-         raterisk <- factor(raterisk, levels = 1:3,
-                            labels = raterisk.label[["short"]])
-         fracture <- factor(fracture, levels = 0:1, labels = no.yes)
-         })
 
+glow500 <- within(glow500, {
+  priorfrac <- noYes(priorfrac)
+  premeno <- noYes(premeno)
+  momfrac <- noYes(momfrac)
+  armassist <- noYes(armassist)
+  smoke <- noYes(smoke)
+  raterisk <- factor(raterisk, levels = 1:3,
+                     labels = raterisk.label[["short"]])
+  fracture <- noYes(fracture)
+})
 glow500 <- glow500[order(glow500$sub_id), ]
+rownames(glow500) <- NULL
+
 save("glow500", file = "../data/glow500.rda")
