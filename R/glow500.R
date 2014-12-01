@@ -21,7 +21,7 @@
 #' \item{fracture}{Any fracture in first year}
 #' }
 #' @examples
-#' head(glow500)
+#' head(glow500, n = 10)
 #'
 #' ## Table 2.2
 #' summary(glm(fracture ~ age + weight + priorfrac + premeno + raterisk,

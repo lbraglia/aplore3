@@ -15,5 +15,5 @@
 #' \item{flame}{Flame involved in burn injury}
 #' }
 #' @examples
-#' head(burn)
+#' head(burn, n = 10)
 "burn"

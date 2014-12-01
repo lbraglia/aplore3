@@ -1,0 +1,298 @@
+
+R version 3.1.1 (2014-07-10) -- "Sock it to Me"
+Copyright (C) 2014 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> pkgname <- "aplore3"
+> source(file.path(R.home("share"), "R", "examples-header.R"))
+> options(warn = 1)
+> library('aplore3')
+> 
+> base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
+> cleanEx()
+> nameEx("aps")
+> ### * aps
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: aps
+> ### Title: APS data
+> ### Aliases: aps
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> head(aps, n = 10)
+   id                    place                      place3      age      race
+1   1            Day Treatment Outpatient or Day Treatment 15.95346     White
+2   2              Residential                 Residential 14.57084 Non-white
+3   3               Outpatient Outpatient or Day Treatment 15.81930 Non-white
+4   4               Outpatient Outpatient or Day Treatment 15.59754     White
+5   5               Outpatient Outpatient or Day Treatment 16.35044     White
+6   6               Outpatient Outpatient or Day Treatment 13.55236     White
+7   7 Intermediate Residential    Intermediate Residential 14.44764     White
+8   8               Outpatient Outpatient or Day Treatment 14.33812 Non-white
+9   9              Residential                 Residential 13.50856 Non-white
+10 10 Intermediate Residential    Intermediate Residential 12.55852 Non-white
+   gender    neuro       emot   danger   elope los behav custd viol
+1  Female   Severe     Severe Unlikely No Risk  14     0    No   No
+2    Male     None Not Severe Possible No Risk  44     7    No  Yes
+3  Female     None Not Severe Possible No Risk  11     4    No   No
+4    Male     None Not Severe   Likely At Risk   4     6   Yes  Yes
+5    Male Moderate     Severe   Likely No Risk   5     7    No  Yes
+6    Male     None Not Severe   Likely At Risk   8     6    No  Yes
+7  Female     None     Severe Possible No Risk   6     4   Yes  Yes
+8  Female     None Not Severe   Likely No Risk   3     5    No  Yes
+9  Female     None Not Severe Possible At Risk  45     6    No  Yes
+10   Male     None Not Severe   Likely At Risk   8     7   Yes  Yes
+> 
+> 
+> 
+> cleanEx()
+> nameEx("burn")
+> ### * burn
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: burn
+> ### Title: BURN data
+> ### Aliases: burn
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> head(burn, n = 10)
+   id facility death  age gender      race tbsa inh_inj flame
+1   1       11 Alive 26.6   Male     White 25.3      No   Yes
+2   2        1 Alive  2.0 Female Non-White  5.0      No    No
+3   3       12 Alive 22.0 Female Non-White  2.0      No    No
+4   4        1 Alive 37.3   Male     White  2.0      No    No
+5   5        1 Alive 52.1   Male     White  6.0      No   Yes
+6   6        6 Alive 50.2   Male     White  7.0      No    No
+7   7       22 Alive  2.5 Female Non-White  7.0      No    No
+8   8        1 Alive 53.8 Female     White  0.9      No   Yes
+9   9        1 Alive 31.9   Male     White  2.0      No    No
+10 10        1 Alive 41.1   Male     White 22.0      No   Yes
+> 
+> 
+> 
+> cleanEx()
+> nameEx("chdage")
+> ### * chdage
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: chdage
+> ### Title: CHDAGE data
+> ### Aliases: chdage
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> head(chdage,  n = 10)
+   id age agegrp chd
+1   1  20  20-39  No
+2   2  23  20-39  No
+3   3  24  20-39  No
+4   4  25  20-39  No
+5   5  25  20-39 Yes
+6   6  26  20-39  No
+7   7  26  20-39  No
+8   8  28  20-39  No
+9   9  28  20-39  No
+10 10  29  20-39  No
+> 
+> ## Figure 1.1
+> plot(as.integer(chd)-1 ~ age,
++      pch = 20,
++      ylab = "Coronary heart disease",
++      xlab = "Age (years)",
++      data = chdage,
++      main = "Figure 1.1")
+> 
+> ## Table 1.2
+> with(chdage, addmargins(table(agegrp)))
+agegrp
+20-39 30-34 35-39 40-44 45-49 50-54 55-59 60-69   Sum 
+   10    15    12    15    13     8    17    10   100 
+> with(chdage, addmargins(table(agegrp, chd)))
+       chd
+agegrp   No Yes Sum
+  20-39   9   1  10
+  30-34  13   2  15
+  35-39   9   3  12
+  40-44  10   5  15
+  45-49   7   6  13
+  50-54   3   5   8
+  55-59   4  13  17
+  60-69   2   8  10
+  Sum    57  43 100
+> (Means <- with(chdage, tapply(as.integer(chd)-1, list(agegrp), mean)))
+    20-39     30-34     35-39     40-44     45-49     50-54     55-59     60-69 
+0.1000000 0.1333333 0.2500000 0.3333333 0.4615385 0.6250000 0.7647059 0.8000000 
+> 
+> ## Figure 1.2
+> midPoints <- c(24.5, seq(32, 57, 5), 64.5)
+> plot(midPoints, Means, pch = 20,
++      ylab = "Coronary heart disease (mean)",
++      xlab = "Age (years)", ylim = 0:1,
++      main = "Figure 1.2")
+> lines(midPoints, Means)
+> 
+> ## Table 1.3
+> summary( glm( chd ~ age, family = binomial, data = chdage ))
+
+Call:
+glm(formula = chd ~ age, family = binomial, data = chdage)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-1.9718  -0.8456  -0.4576   0.8253   2.2859  
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)    
+(Intercept) -5.30945    1.13365  -4.683 2.82e-06 ***
+age          0.11092    0.02406   4.610 4.02e-06 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 136.66  on 99  degrees of freedom
+Residual deviance: 107.35  on 98  degrees of freedom
+AIC: 111.35
+
+Number of Fisher Scoring iterations: 4
+
+> 
+> 
+> 
+> cleanEx()
+> nameEx("glow500")
+> ### * glow500
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: glow500
+> ### Title: GLOW500 data
+> ### Aliases: glow500
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> head(glow500, n = 10)
+   sub_id site_id phy_id priorfrac age weight height      bmi premeno momfrac
+1       1       1     14        No  62   70.3    158 28.16055      No      No
+2       2       4    284        No  65   87.1    160 34.02344      No      No
+3       3       6    305       Yes  88   50.8    157 20.60936      No     Yes
+4       4       6    309        No  82   62.1    160 24.25781      No      No
+5       5       1     37        No  61   68.0    152 29.43213      No      No
+6       6       5    299       Yes  67   68.0    161 26.23356      No      No
+7       7       5    302        No  84   50.8    150 22.57778      No      No
+8       8       1     36       Yes  82   40.8    153 17.42919      No      No
+9       9       1      8       Yes  86   62.6    156 25.72321      No      No
+10     10       4    282        No  58   63.5    166 23.04398      No      No
+   armassist smoke raterisk fracscore fracture
+1         No    No     Same         1       No
+2         No    No     Same         2       No
+3        Yes    No     Less        11       No
+4         No    No     Less         5       No
+5         No    No     Same         1       No
+6         No   Yes     Same         4       No
+7         No    No     Less         6       No
+8         No    No     Same         7       No
+9         No    No     Same         7       No
+10        No    No     Less         0       No
+> 
+> ## Table 2.2
+> summary(glm(fracture ~ age + weight + priorfrac + premeno + raterisk,
++             family = binomial,
++             data = glow500))
+
+Call:
+glm(formula = fracture ~ age + weight + priorfrac + premeno + 
+    raterisk, family = binomial, data = glow500)
+
+Deviance Residuals: 
+     Min        1Q    Median        3Q       Max  
+-1.42250  -0.74873  -0.59711  -0.06046   2.28830  
+
+Coefficients:
+                 Estimate Std. Error z value Pr(>|z|)    
+(Intercept)     -5.605794   1.220668  -4.592 4.38e-06 ***
+age              0.050142   0.013417   3.737 0.000186 ***
+weight           0.004080   0.006926   0.589 0.555803    
+priorfracYes     0.679457   0.242384   2.803 0.005059 ** 
+premenoYes       0.186958   0.276710   0.676 0.499266    
+rateriskSame     0.534493   0.275858   1.938 0.052676 .  
+rateriskGreater  0.874123   0.289157   3.023 0.002503 ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 562.34  on 499  degrees of freedom
+Residual deviance: 518.08  on 493  degrees of freedom
+AIC: 532.08
+
+Number of Fisher Scoring iterations: 4
+
+> 
+> 
+> 
+> cleanEx()
+> nameEx("lowbwt")
+> ### * lowbwt
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: lowbwt
+> ### Title: LOWBWT data
+> ### Aliases: lowbwt
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> head(lowbwt, n = 10)
+   id      low age lwt  race smoke  ptl  ht  ui       ftv  bwt
+1   4 < 2500 g  28 120 Other   Yes  One  No Yes      None  709
+2  10 < 2500 g  29 130 White    No None  No Yes Two, etc. 1021
+3  11 < 2500 g  34 187 Black   Yes None Yes  No      None 1135
+4  13 < 2500 g  25 105 Other    No  One Yes  No      None 1330
+5  15 < 2500 g  25  85 Other    No None  No Yes      None 1474
+6  16 < 2500 g  27 150 Other    No None  No  No      None 1588
+7  17 < 2500 g  23  97 Other    No None  No Yes       One 1588
+8  18 < 2500 g  24 128 Black    No  One  No  No       One 1701
+9  19 < 2500 g  24 132 Other    No None Yes  No      None 1729
+10 20 < 2500 g  21 165 White   Yes None Yes  No       One 1790
+> 
+> 
+> 
+> ### * <FOOTER>
+> ###
+> options(digits = 7L)
+> base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
+Time elapsed:  0.096 0 0.096 0 0 
+> grDevices::dev.off()
+null device 
+          1 
+> ###
+> ### Local variables: ***
+> ### mode: outline-minor ***
+> ### outline-regexp: "\\(> \\)?### [*]+" ***
+> ### End: ***
+> quit('no')

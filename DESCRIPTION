@@ -1,7 +1,7 @@
 Package: aplore3
 Title: Datasets from Hosmer, Lemeshow, Sturdivant "Applied Logistic
     Regression" (3rd ed.)
-Version: 0.3
+Version: 0.4
 Authors@R: "Luca Braglia <lbraglia@gmail.com> [aut, cre]"
 Description: This package is a 'unofficial' companion to the textbook Applied
     Logistic Regression (3rd ed., 2013) by DW. Hosmer, S. Lemeshow and

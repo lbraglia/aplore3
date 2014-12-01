@@ -22,7 +22,7 @@ burn
 burn dataset.
 }
 \examples{
-head(burn)
+head(burn, n = 10)
 }
 \keyword{datasets}
 
