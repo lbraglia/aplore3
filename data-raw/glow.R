@@ -21,5 +21,6 @@ glow500 <- within(glow500, {
 })
 glow500 <- glow500[order(glow500$sub_id), ]
 rownames(glow500) <- NULL
+summary(glow500)
 
 save("glow500", file = "../data/glow500.rda")

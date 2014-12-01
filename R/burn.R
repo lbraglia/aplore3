@@ -1,6 +1,6 @@
-#' BURN data
+#' BURN1000 data
 #' 
-#' burn dataset.
+#' burn1000 dataset.
 #' 
 #' @format A data frame with 100 rows and 3 variables:
 #' \describe{
@@ -15,5 +15,5 @@
 #' \item{flame}{Flame involved in burn injury}
 #' }
 #' @examples
-#' head(burn, n = 10)
-"burn"
+#' head(burn1000, n = 10)
+"burn1000"

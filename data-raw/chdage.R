@@ -14,5 +14,6 @@ chdage <- within(chdage, {
 })
 chdage <- chdage[order(chdage$id), c(1,2,4,3)]
 rownames(chdage) <- NULL
+summary(chdage)
 
 save("chdage", file = "../data/chdage.rda")

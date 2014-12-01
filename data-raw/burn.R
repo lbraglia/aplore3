@@ -1,22 +1,23 @@
 
 source("utils.r")
-burn <- read.table(file = "BURN/BURN1000.txt",
+burn1000 <- read.table(file = "BURN/BURN1000.txt",
                      as.is = TRUE,
                      header = TRUE)
-names(burn) <- tolower(names(burn))
-names(burn)[6] <- "race"
+names(burn1000) <- tolower(names(burn1000))
+names(burn1000)[6] <- "race"
 death.labels <- c("Alive","Dead")
 gender.labels <- c("Female","Male")
 race.labels <- c("Non-White","White")
 
-burn <- within(burn, {
-  death <- factor(death, levels = zo, labels = death.labels)
-  gender <- factor(gender, levels = zo, labels = gender.labels)
-  race <- factor(race, levels = zo, labels = race.labels )
+burn1000 <- within(burn1000, {
+  death <- factor(death, levels = z1, labels = death.labels)
+  gender <- factor(gender, levels = z1, labels = gender.labels)
+  race <- factor(race, levels = z1, labels = race.labels )
   inh_inj <- noYes(inh_inj)
   flame <- noYes(flame)
 })
-burn <- burn[order(burn$id), ]
-rownames(burn) <- NULL
+burn1000 <- burn1000[order(burn1000$id), ]
+rownames(burn1000) <- NULL
+summary(burn1000)
 
-save("burn", file = "../data/burn.rda")
+save("burn1000", file = "../data/burn1000.rda")
