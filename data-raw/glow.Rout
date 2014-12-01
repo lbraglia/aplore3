@@ -19,7 +19,30 @@
 +                      labels = raterisk.label[["short"]])
 +   fracture <- noYes(fracture)
 + })
-Errore in factor(x, levels = zo, labels = c("No", "Yes")) : 
-  oggetto "zo" non trovato
-Calls: within ... within.data.frame -> eval -> eval -> noYes -> factor
-Esecuzione interrotta
+> glow500 <- glow500[order(glow500$sub_id), ]
+> rownames(glow500) <- NULL
+> summary(glow500)
+     sub_id         site_id          phy_id       priorfrac      age       
+ Min.   :  1.0   Min.   :1.000   Min.   :  1.00   No :374   Min.   :55.00  
+ 1st Qu.:125.8   1st Qu.:2.000   1st Qu.: 57.75   Yes:126   1st Qu.:61.00  
+ Median :250.5   Median :3.000   Median :182.50             Median :67.00  
+ Mean   :250.5   Mean   :3.436   Mean   :178.55             Mean   :68.56  
+ 3rd Qu.:375.2   3rd Qu.:5.000   3rd Qu.:298.00             3rd Qu.:76.00  
+ Max.   :500.0   Max.   :6.000   Max.   :325.00             Max.   :90.00  
+     weight           height           bmi        premeno   momfrac   armassist
+ Min.   : 39.90   Min.   :134.0   Min.   :14.88   No :403   No :435   No :312  
+ 1st Qu.: 59.90   1st Qu.:157.0   1st Qu.:23.27   Yes: 97   Yes: 65   Yes:188  
+ Median : 68.00   Median :161.5   Median :26.42                                
+ Mean   : 71.82   Mean   :161.4   Mean   :27.55                                
+ 3rd Qu.: 81.30   3rd Qu.:165.0   3rd Qu.:30.79                                
+ Max.   :127.00   Max.   :199.0   Max.   :49.08                                
+ smoke        raterisk     fracscore      fracture 
+ No :465   Less   :167   Min.   : 0.000   No :375  
+ Yes: 35   Same   :186   1st Qu.: 2.000   Yes:125  
+           Greater:147   Median : 3.000            
+                         Mean   : 3.698            
+                         3rd Qu.: 5.000            
+                         Max.   :11.000            
+> 
+> save("glow500", file = "../data/glow500.rda")
+> 

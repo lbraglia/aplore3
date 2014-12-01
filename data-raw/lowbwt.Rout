@@ -19,6 +19,21 @@
 + })
 > lowbwt <- lowbwt[order(lowbwt$id), ]
 > rownames(lowbwt) <- NULL
+> summary(lowbwt)
+       id               low           age             lwt           race   
+ Min.   :  4.0   >= 2500 g:130   Min.   :14.00   Min.   : 80.0   White:96  
+ 1st Qu.: 68.0   < 2500 g : 59   1st Qu.:19.00   1st Qu.:110.0   Black:26  
+ Median :123.0                   Median :23.00   Median :121.0   Other:67  
+ Mean   :121.1                   Mean   :23.24   Mean   :129.8             
+ 3rd Qu.:176.0                   3rd Qu.:26.00   3rd Qu.:140.0             
+ Max.   :226.0                   Max.   :45.00   Max.   :250.0             
+ smoke            ptl        ht        ui             ftv           bwt      
+ No :115   None     :159   No :177   No :161   None     :100   Min.   : 709  
+ Yes: 74   One      : 24   Yes: 12   Yes: 28   One      : 47   1st Qu.:2414  
+           Two, etc.:  6                       Two, etc.: 42   Median :2977  
+                                                               Mean   :2945  
+                                                               3rd Qu.:3475  
+                                                               Max.   :4990  
 > 
 > save("lowbwt", file = "../data/lowbwt.rda")
 > 

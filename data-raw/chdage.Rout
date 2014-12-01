@@ -14,6 +14,15 @@
 + })
 > chdage <- chdage[order(chdage$id), c(1,2,4,3)]
 > rownames(chdage) <- NULL
+> summary(chdage)
+       id              age            agegrp    chd    
+ Min.   :  1.00   Min.   :20.00   55-59  :17   No :57  
+ 1st Qu.: 25.75   1st Qu.:34.75   30-34  :15   Yes:43  
+ Median : 50.50   Median :44.00   40-44  :15           
+ Mean   : 50.50   Mean   :44.38   45-49  :13           
+ 3rd Qu.: 75.25   3rd Qu.:55.00   35-39  :12           
+ Max.   :100.00   Max.   :69.00   20-39  :10           
+                                  (Other):18           
 > 
 > save("chdage", file = "../data/chdage.rda")
 > 
