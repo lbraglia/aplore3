@@ -3,7 +3,7 @@
 \name{icu}
 \alias{icu}
 \title{ICU data}
-\format{A data frame with XXX rows and 21 variables:
+\format{A data.frame with 200 rows and 21 variables:
 \describe{
 \item{id}{Identification code (ID Number)}
 \item{sta}{Vital Status at hospital discharge (1: Died, 2: Lived)}

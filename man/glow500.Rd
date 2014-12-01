@@ -3,7 +3,7 @@
 \name{glow500}
 \alias{glow500}
 \title{GLOW500 data}
-\format{A data frame with 500 rows and 15 variables:
+\format{A data.frame with 500 rows and 15 variables:
 \describe{
 \item{sub_id}{Identification Code (1 - n)}
 \item{site_id}{Study Site (1 - 6)}

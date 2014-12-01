@@ -2,7 +2,7 @@
 #' 
 #' burn1000 dataset.
 #' 
-#' @format A data frame with 1000 rows and 9 variables:
+#' @format A data.frame with 1000 rows and 9 variables:
 #' \describe{
 #' \item{id}{Identification code (1 - 1000)}
 #' \item{facility}{Burn facility (1 - 40)}

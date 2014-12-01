@@ -2,7 +2,7 @@
 #' 
 #' lowbwt dataset.
 #' 
-#' @format A data frame with XXX rows and 11 variables:
+#' @format A data.frame with 189 rows and 11 variables:
 #' \describe{
 #' \item{id}{Identification Code}
 #' \item{low}{Low birth weight (1: >= 2500, 2: < 2500 g)}

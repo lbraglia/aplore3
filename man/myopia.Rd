@@ -3,7 +3,7 @@
 \name{myopia}
 \alias{myopia}
 \title{MYOPIA data}
-\format{A data frame with XXX rows and 18 variables:
+\format{A data.frame with 618 rows and 18 variables:
 \describe{
 \item{id}{Subject identifier (1-1503)}
 \item{studyyear}{Year subject entered the study (Year)}

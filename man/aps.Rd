@@ -3,7 +3,7 @@
 \name{aps}
 \alias{aps}
 \title{APS data}
-\format{A data frame with XXX rows and 11 variables:
+\format{A data.frame with 508 rows and 11 variables:
 \describe{
 \item{id}{Identification Code (1 - 508)}
 \item{place}{Placement (1: Outpatient, 2: Day Treatment, 3:

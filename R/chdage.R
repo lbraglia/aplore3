@@ -2,7 +2,7 @@
 #' 
 #' chdage dataset.
 #' 
-#' @format A data frame with 100 rows and 3 variables:
+#' @format A data.frame with 100 rows and 4 variables:
 #' \describe{
 #' \item{id}{Identification code (1 - 100)}
 #' \item{age}{Age (Years)}
