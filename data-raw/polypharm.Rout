@@ -1,0 +1,57 @@
+> 
+> source("utils.r")
+> polypharm <- read.delim(file = "POLYPHARM/POLYPHARM.txt",
++                         as.is = TRUE,
++                         header = TRUE)
+> names(polypharm) <- tolower(names(polypharm))
+> mhv4.label <- c("0", "1-5", "6-14", "> 14")
+> inptmhv3.label <- c("0", "1", "> 1")
+> group.label <- c("CFC", "ABD", "FOS")
+> urban.label <- c("Urban", "Rural")
+> numprim.label <- inptmhv3.label
+> gender.label <- c("Female", "Male")
+> race.label <- c("White", "Black", "Other")
+> ethnic.label <- c("Non-Hispanic", "Hispanic")
+>   
+> polypharm <- within(polypharm, {
++   polypharmacy <- noYes(polypharmacy)
++   mhv4 <- factor(mhv4, levels = z3, labels = mhv4.label)
++   inptmhv3 <- factor(inptmhv3, levels = z2, labels = inptmhv3.label)
++   group <- factor(group, levels = o3, labels = group.label)
++   urban <- factor(urban, levels = z1, labels = urban.label)
++   comorbid <- noYes(comorbid)
++   anyprim <- noYes(anyprim)
++   numprim <- factor(numprim, levels = z2, labels = numprim.label)
++   gender <- factor(gender, levels = z1, labels = gender.label)
++   race <- factor(race, levels = z2, labels = race.label)
++   ethnic <- factor(ethnic, levels = z1, labels = ethnic.label)
++ })
+> polypharm <- polypharm[order(polypharm$id), ]
+> rownames(polypharm) <- NULL
+> dim(polypharm)
+[1] 3500   14
+> summary(polypharm)
+       id        polypharmacy   mhv4      inptmhv3        year      group     
+ Min.   :  1.0   No :2681     0   : 558   0  :3333   Min.   :2002   CFC:1787  
+ 1st Qu.:125.8   Yes: 819     1-5 : 909   1  : 121   1st Qu.:2003   ABD:1251  
+ Median :250.5                6-14:1002   > 1:  46   Median :2005   FOS: 462  
+ Mean   :250.5                > 14:1031              Mean   :2005             
+ 3rd Qu.:375.2                                       3rd Qu.:2007             
+ Max.   :500.0                                       Max.   :2008             
+   urban      comorbid   anyprim    numprim        gender        race     
+ Urban:2529   No :2879   No : 991   0   : 991   Female: 798   White:2926  
+ Rural: 970   Yes: 621   Yes:2509   1   :2440   Male  :2702   Black: 553  
+ NA's :   1                         > 1 :  20                 Other:  21  
+                                    NA's:  49                             
+                                                                          
+                                                                          
+          ethnic          age       
+ Non-Hispanic:3458   Min.   : 1.17  
+ Hispanic    :  42   1st Qu.: 9.67  
+                     Median :11.75  
+                     Mean   :11.65  
+                     3rd Qu.:13.75  
+                     Max.   :18.92  
+> 
+> save("polypharm", file = "../data/polypharm.rda")
+> 
