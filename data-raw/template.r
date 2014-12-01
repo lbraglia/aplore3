@@ -1,5 +1,5 @@
 
-source("utils.R")
+source("utils.r")
 dataset <- read.table(file = "DATASET/DATASET.txt",
                       as.is = TRUE,
                       header = TRUE)
