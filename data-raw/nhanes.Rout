@@ -1,0 +1,68 @@
+> 
+> source("utils.r")
+> nhanes <- read.delim(file = "NHANES/NHANES.txt",
++                       as.is = TRUE,
++                       header = TRUE)
+> names(nhanes) <- tolower(names(nhanes))
+> gender.label <- c("Male","Female")
+> marstat.label <- c("Married", "Widowed", "Divorced", "Separated",
++                    "Never Married", "Living Together") 
+> 
+> nhanes <- within(nhanes, {
++   gender <- factor(gender, levels = z1, labels = gender.label)
++   marstat <- factor(marstat, levels = o6, labels = marstat.label)
++   vigwrk <- yesNo(vigwrk)
++   modwrk <- yesNo(modwrk)
++   wlkbik <- yesNo(wlkbik)
++   vigrecexr <- yesNo(vigrecexr)
++   modrecexr <- yesNo(modrecexr)
++   obese <- noYes(obese)
++ })
+> nhanes <- nhanes[order(nhanes$id), ]
+> rownames(nhanes) <- NULL
+> dim(nhanes)
+[1] 6482   21
+> summary(nhanes)
+       id          gender          age                   marstat    
+ Min.   :   1   Male  :3164   Min.   :16.00   Married        :3019  
+ 1st Qu.:1621   Female:3318   1st Qu.:30.00   Widowed        : 505  
+ Median :3242                 Median :46.00   Divorced       : 643  
+ Mean   :3242                 Mean   :46.34   Separated      : 195  
+ 3rd Qu.:4862                 3rd Qu.:62.00   Never Married  :1034  
+ Max.   :6482                 Max.   :80.00   Living Together: 457  
+                                              NA's           : 629  
+    samplewt           psu           strata           tchol      
+ Min.   :  4084   Min.   :1.00   Min.   : 1.000   Min.   : 90.0  
+ 1st Qu.: 16460   1st Qu.:1.00   1st Qu.: 4.000   1st Qu.:162.0  
+ Median : 24217   Median :2.00   Median : 7.000   Median :188.0  
+ Mean   : 34546   Mean   :1.51   Mean   : 7.225   Mean   :192.1  
+ 3rd Qu.: 50435   3rd Qu.:2.00   3rd Qu.:11.000   3rd Qu.:218.0  
+ Max.   :153810   Max.   :2.00   Max.   :15.000   Max.   :383.0  
+                                                  NA's   :395    
+      hdl             sysbp          dbp               wt        
+ Min.   : 11.00   Min.   : 90   Min.   : 40.00   Min.   : 33.20  
+ 1st Qu.: 41.00   1st Qu.:110   1st Qu.: 62.00   1st Qu.: 65.90  
+ Median : 50.00   Median :120   Median : 70.00   Median : 77.60  
+ Mean   : 52.41   Mean   :123   Mean   : 69.59   Mean   : 80.38  
+ 3rd Qu.: 61.00   3rd Qu.:132   3rd Qu.: 78.00   3rd Qu.: 91.80  
+ Max.   :144.00   Max.   :220   Max.   :134.00   Max.   :159.10  
+ NA's   :395      NA's   :553   NA's   :594      NA's   :37      
+       ht             bmi         vigwrk      modwrk      wlkbik    
+ Min.   :123.3   Min.   :13.18   Yes :1131   Yes :2190   Yes :1807  
+ 1st Qu.:160.0   1st Qu.:23.99   No  :5350   No  :4291   No  :4674  
+ Median :166.9   Median :27.68   NA's:   1   NA's:   1   NA's:   1  
+ Mean   :167.4   Mean   :28.62                                      
+ 3rd Qu.:175.0   3rd Qu.:32.15                                      
+ Max.   :202.7   Max.   :65.19                                      
+ NA's   :37      NA's   :37                                         
+ vigrecexr   modrecexr       sedmin       obese     
+ Yes :1402   Yes :2493   Min.   :  0.0   No  :5459  
+ No  :5079   No  :3987   1st Qu.:180.0   Yes : 986  
+ NA's:   1   NA's:   2   Median :300.0   NA's:  37  
+                         Mean   :321.1              
+                         3rd Qu.:480.0              
+                         Max.   :840.0              
+                         NA's   :79                 
+> 
+> save("nhanes", file = "../data/nhanes.rda")
+> 
