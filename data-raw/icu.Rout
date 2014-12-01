@@ -1,0 +1,72 @@
+> 
+> source("utils.r")
+> icu <- read.table(file = "ICU/ICU.txt",
++                       as.is = TRUE,
++                       header = TRUE)
+> names(icu) <- tolower(names(icu))
+> names(icu)[14] <- "type"
+> sta.label <- c("Died","Lived")
+> gender.label <- c("Male", "Female")
+> race.label <- c("White","Black","Other")
+> ser.label <- c("Medical","Surgical")
+> type.label <- c("Elective","Emergency")
+> po2.label <- c("> 60","<= 60")
+> ph.label <- c(">= 7.25","< 7.25")
+> pco.label <- c("<= 45", "> 45")
+> bic.label <- c(">= 18", "< 18")
+> cre.label <- c("≤ 2.0", "> 2.0")
+> loc.label <- c("No coma or deep stupor", "Deep stupor", "Coma")
+> 
+> icu <- within(icu, {
++   sta <- factor(sta, levels = z1, labels = sta.label)
++   gender <- factor(gender, levels = z1, labels = gender.label)
++   race <- factor(race, levels = o3, labels = race.label)
++   ser <- factor(ser, levels = z1, labels = ser.label)
++   can <- noYes(can)
++   crn <- noYes(crn)
++   inf <- noYes(inf)
++   cpr <- noYes(cpr)
++   pre <- noYes(pre)
++   type <- factor(type, levels = z1, labels = type.label)
++   fra <- noYes(fra)
++   po2 <- factor(po2, levels = z1, labels = po2.label)
++   ph <- factor(ph, levels = z1, labels = ph.label)
++   pco <- factor(pco, levels = z1, labels = pco.label)
++   bic <- factor(bic, levels = z1, labels = bic.label)
++   cre <- factor(cre, levels = z1, labels = cre.label)
++   loc <- factor(loc, levels = z2, labels = loc.label)
++ })
+> icu <- icu[order(icu$id), ]
+> rownames(icu) <- NULL
+> summary(icu)
+       id           sta           age           gender       race    
+ Min.   :  4.0   Died :160   Min.   :16.00   Male  :124   White:175  
+ 1st Qu.:210.2   Lived: 40   1st Qu.:46.75   Female: 76   Black: 15  
+ Median :412.5               Median :63.00                Other: 10  
+ Mean   :444.8               Mean   :57.55                           
+ 3rd Qu.:671.8               3rd Qu.:72.00                           
+ Max.   :929.0               Max.   :92.00                           
+       ser       can       crn       inf       cpr           sys       
+ Medical : 93   No :180   No :181   No :116   No :187   Min.   : 36.0  
+ Surgical:107   Yes: 20   Yes: 19   Yes: 84   Yes: 13   1st Qu.:110.0  
+                                                        Median :130.0  
+                                                        Mean   :132.3  
+                                                        3rd Qu.:150.0  
+                                                        Max.   :256.0  
+      hra          pre             type      fra         po2            ph     
+ Min.   : 39.00   No :170   Elective : 53   No :185   > 60 :184   >= 7.25:187  
+ 1st Qu.: 80.00   Yes: 30   Emergency:147   Yes: 15   <= 60: 16   < 7.25 : 13  
+ Median : 96.00                                                                
+ Mean   : 98.92                                                                
+ 3rd Qu.:118.25                                                                
+ Max.   :192.00                                                                
+    pco         bic         cre                          loc     
+ <= 45:180   >= 18:185   ≤ 2.0:190   No coma or deep stupor:185  
+ > 45 : 20   < 18 : 15   > 2.0: 10   Deep stupor           :  5  
+                                     Coma                  : 10  
+                                                                 
+                                                                 
+                                                                 
+> 
+> save("icu", file = "../data/icu.rda")
+> 
