@@ -16,9 +16,6 @@
 #' head(chdage,  n = 10)
 #' summary(chdage)
 #'
-#' ## FIXME TODO: MASS missing
-#' rownames(installed.packages())
-#' 
 #' ## Figure 1.1
 #' plot(as.integer(chd)-1 ~ age,
 #'      pch = 20,
@@ -47,6 +44,10 @@
 #' vcov(mod1.3)
 #'
 #' ## Computing OddsRatio and confidence intervals for age ...
+#' ## TRAVIS tests: MASS missing ?
+#' rownames(installed.packages())
+#' sessionInfo()
 #' exp(coef(mod1.3))[-1]
 #' exp(confint(mod1.3))[-1, ]
+#' 
 "chdage"
