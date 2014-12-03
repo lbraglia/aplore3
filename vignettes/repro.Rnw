@@ -4,9 +4,6 @@
 \usepackage{hyperref}
 % \VignetteEngine{knitr::knitr}
 % \VignetteIndexEntry{Reproducing ``Applied Logistic Regression'' with R}
-% \VignetteDepends{aplore3}
-% \VignetteDepends{knitr}
-% \VignetteDepends{xtable}
 % \VignetteKeyword{hosmer}
 % \VignetteKeyword{lemeshow}
 % \VignetteKeyword{sturdivant}
@@ -22,7 +19,6 @@
 
 <<setup, include=FALSE>>=
 library(knitr)
-library(xtable)
 library(aplore3)
 opts_chunk$set(fig.align = 'center' )
 set.seed(13141712)
