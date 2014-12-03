@@ -25,6 +25,10 @@ set.seed(13141712)
 options(width = 75)
 @ 
 
+<<>>=
+rownames(installed.packages())
+@ 
+
 \Sexpr{knit_child("ch/01_intro.Rnw")}
 \Sexpr{knit_child("ch/02_multipleRegression.Rnw")}
 %% \Sexpr{knit_child("ch/03_interpretation.Rnw")}
