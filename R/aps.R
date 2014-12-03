@@ -23,7 +23,7 @@
 #' \item{custd}{State Custody (1: No, 2: Yes)}
 #' \item{viol}{History of Violence (1: No, 2: Yes)}
 #' }
-#' @source Hosmer, D.W., Lemeshow, S. and Sturdivant R.X. (2013) Applied
+#' @source Hosmer, D.W., Lemeshow, S. and Sturdivant, R.X. (2013) Applied
 #' Logistic Regression, 3rd ed., New York: Wiley
 #' @examples
 #' head(aps, n = 10)

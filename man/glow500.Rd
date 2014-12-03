@@ -24,7 +24,7 @@ of the same age)}
 \item{fracture}{Any fracture in first year (1: No, 2: Yes)}
 }}
 \source{
-Hosmer, D.W., Lemeshow, S. and Sturdivant R.X. (2013) Applied
+Hosmer, D.W., Lemeshow, S. and Sturdivant, R.X. (2013) Applied
 Logistic Regression, 3rd ed., New York: Wiley
 }
 \usage{

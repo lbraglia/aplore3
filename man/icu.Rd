@@ -30,7 +30,7 @@ No, 2: Yes)}
 stupor, 2: Deep stupor, 3: Coma)}
 }}
 \source{
-Hosmer, D.W., Lemeshow, S. and Sturdivant R.X. (2013) Applied
+Hosmer, D.W., Lemeshow, S. and Sturdivant, R.X. (2013) Applied
 Logistic Regression, 3rd ed., New York: Wiley
 }
 \usage{

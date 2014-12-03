@@ -22,7 +22,7 @@
 #' \item{fracscore}{Fracture Risk Score (Composite Risk Score)}
 #' \item{fracture}{Any fracture in first year (1: No, 2: Yes)}
 #' }
-#' @source Hosmer, D.W., Lemeshow, S. and Sturdivant R.X. (2013) Applied
+#' @source Hosmer, D.W., Lemeshow, S. and Sturdivant, R.X. (2013) Applied
 #' Logistic Regression, 3rd ed., New York: Wiley
 #' @examples
 #' head(glow500, n = 10)

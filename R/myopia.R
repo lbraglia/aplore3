@@ -24,7 +24,7 @@
 #' \item{mommy}{Was the subject's mother myopic? (1: No, 2: Yes)}
 #' \item{dadmy}{Was the subject's father myopic? (1: No, 2: Yes)}
 #' }
-#' @source Hosmer, D.W., Lemeshow, S. and Sturdivant R.X. (2013) Applied
+#' @source Hosmer, D.W., Lemeshow, S. and Sturdivant, R.X. (2013) Applied
 #' Logistic Regression, 3rd ed., New York: Wiley
 #' @examples
 #' head(myopia, n = 10)

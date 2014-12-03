@@ -7,9 +7,17 @@
 #' \describe{
 #' \item{pair}{Pair Identification Code (1-119)}
 #' }
-#' @source Hosmer, D.W., Lemeshow, S. and Sturdivant R.X. (2013) Applied
+#' @source Hosmer, D.W., Lemeshow, S. and Sturdivant, R.X. (2013) Applied
 #' Logistic Regression, 3rd ed., New York: Wiley
 #' @examples
 #' head(glow11m, n = 10)
 #' summary(glow11m)
+#'
+#' ## Table 7.2 p. 252
+#' if(require(survival)) {
+#'   mod7.2 <- clogit(as.numeric(fracture) ~ height + weight + bmi +
+#'                    priorfrac + premeno + momfrac + armassist + raterisk +
+#'                    strata(pair), data = glow11m)
+#'   summary(mod7.2)
+#' }
 "glow11m"

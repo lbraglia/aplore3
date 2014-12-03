@@ -10,7 +10,7 @@
 #' 45-49, 6: 50-54, 7: 55-59, 8: 60-69)}  
 #' \item{chd}{Presence of CHD (1: No, 2: Yes)}
 #' }
-#' @source Hosmer, D.W., Lemeshow, S. and Sturdivant R.X. (2013) Applied
+#' @source Hosmer, D.W., Lemeshow, S. and Sturdivant, R.X. (2013) Applied
 #' Logistic Regression, 3rd ed., New York: Wiley
 #' @examples
 #' head(chdage,  n = 10)

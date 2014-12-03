@@ -28,7 +28,7 @@
 #' \item{loc}{Level of consciousness at ICU admission (1: No coma or deep
 #' stupor, 2: Deep stupor, 3: Coma)}
 #' }
-#' @source Hosmer, D.W., Lemeshow, S. and Sturdivant R.X. (2013) Applied
+#' @source Hosmer, D.W., Lemeshow, S. and Sturdivant, R.X. (2013) Applied
 #' Logistic Regression, 3rd ed., New York: Wiley
 #' @examples
 #' head(icu, n = 10)

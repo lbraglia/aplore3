@@ -17,7 +17,7 @@
 #' None, 2: One, 3: Two, etc)} 
 #' \item{bwt}{Recorded birth weight (Grams)}
 #' }
-#' @source Hosmer, D.W., Lemeshow, S. and Sturdivant R.X. (2013) Applied
+#' @source Hosmer, D.W., Lemeshow, S. and Sturdivant, R.X. (2013) Applied
 #' Logistic Regression, 3rd ed., New York: Wiley
 #' @examples
 #' head(lowbwt, n = 10)

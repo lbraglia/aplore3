@@ -26,7 +26,7 @@ engaging in sports/outdoor activities (Hours per week)}
 \item{dadmy}{Was the subject's father myopic? (1: No, 2: Yes)}
 }}
 \source{
-Hosmer, D.W., Lemeshow, S. and Sturdivant R.X. (2013) Applied
+Hosmer, D.W., Lemeshow, S. and Sturdivant, R.X. (2013) Applied
 Logistic Regression, 3rd ed., New York: Wiley
 }
 \usage{
