@@ -28,5 +28,4 @@
 #' @examples
 #' head(polypharm, n = 10)
 #' summary(polypharm)
-#'
 "polypharm"

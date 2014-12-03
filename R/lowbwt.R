@@ -20,5 +20,4 @@
 #' @examples
 #' head(lowbwt, n = 10)
 #' summary(lowbwt)
-#'
 "lowbwt"

@@ -30,5 +30,4 @@
 #' @examples
 #' head(nhanes, n = 10)
 #' summary(nhanes)
-#'
 "nhanes"

@@ -27,5 +27,4 @@
 #' @examples
 #' head(myopia, n = 10)
 #' summary(myopia)
-#'
 "myopia"
