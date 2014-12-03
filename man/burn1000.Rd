@@ -15,6 +15,10 @@
 \item{inh_inj}{Burn involved inhalation injury (1: No, 2: Yes)}
 \item{flame}{Flame involved in burn injury (1: No, 2: Yes)}
 }}
+\source{
+Hosmer, D.W., Lemeshow, S. and Sturdivant R.X. (2013) Applied
+Logistic Regression, 3rd ed., New York: Wiley
+}
 \usage{
 burn1000
 }
@@ -24,6 +28,10 @@ burn1000 dataset.
 \examples{
 head(burn1000, n = 10)
 summary(burn1000)
+
+## Table 3.15 p. 80
+summary(mod3.15 <- glm(death ~ tbsa + inh_inj + age + gender + flame + race,
+                       family = binomial, data = burn1000 ))
 }
 \keyword{datasets}
 

@@ -11,6 +11,10 @@
 45-49, 6: 50-54, 7: 55-59, 8: 60-69)}
 \item{chd}{Presence of CHD (1: No, 2: Yes)}
 }}
+\source{
+Hosmer, D.W., Lemeshow, S. and Sturdivant R.X. (2013) Applied
+Logistic Regression, 3rd ed., New York: Wiley
+}
 \usage{
 chdage
 }
@@ -43,7 +47,14 @@ plot(midPoints, Means, pch = 20,
 lines(midPoints, Means)
 
 ## Table 1.3
-summary( glm( chd ~ age, family = binomial, data = chdage ))
+summary( mod1.3 <- glm( chd ~ age, family = binomial, data = chdage ))
+
+## Table 1.4
+vcov(mod1.3)
+
+## Computing OddsRatio and confidence intervals for age ...
+exp(coef(mod1.3))[-1]
+exp(confint(mod1.3))[-1, ]
 }
 \keyword{datasets}
 

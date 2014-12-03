@@ -27,6 +27,8 @@
 #' \item{sedmin}{Minutes of Sedentary Activity per Week (1: Yes, 2: No)}
 #' \item{obese}{BMI>35 (1: No, 2: Yes)}
 #' }
+#' @source Hosmer, D.W., Lemeshow, S. and Sturdivant R.X. (2013) Applied
+#' Logistic Regression, 3rd ed., New York: Wiley
 #' @examples
 #' head(nhanes, n = 10)
 #' summary(nhanes)

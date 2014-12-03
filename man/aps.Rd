@@ -24,6 +24,10 @@ Possible, 3: Probable, 4: Likely)}
 \item{custd}{State Custody (1: No, 2: Yes)}
 \item{viol}{History of Violence (1: No, 2: Yes)}
 }}
+\source{
+Hosmer, D.W., Lemeshow, S. and Sturdivant R.X. (2013) Applied
+Logistic Regression, 3rd ed., New York: Wiley
+}
 \usage{
 aps
 }

@@ -26,6 +26,10 @@ than one)}
 \item{ethnic}{Ethnic category (1: Non-Hispanic, 2: Hispanic)}
 \item{age}{Age (Years and months, two decimal places)}
 }}
+\source{
+Hosmer, D.W., Lemeshow, S. and Sturdivant R.X. (2013) Applied
+Logistic Regression, 3rd ed., New York: Wiley
+}
 \usage{
 polypharm
 }
