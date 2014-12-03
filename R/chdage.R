@@ -15,6 +15,9 @@
 #' @examples
 #' head(chdage,  n = 10)
 #' summary(chdage)
+#'
+#' ## FIXME TODO: MASS missing
+#' rownames(installed.packages())
 #' 
 #' ## Figure 1.1
 #' plot(as.integer(chd)-1 ~ age,
