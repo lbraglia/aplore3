@@ -36,5 +36,12 @@
 #' lines(midPoints, Means)
 #' 
 #' ## Table 1.3
-#' summary( glm( chd ~ age, family = binomial, data = chdage ))
+#' summary( mod1.3 <- glm( chd ~ age, family = binomial, data = chdage ))
+#'
+#' ## Table 1.4
+#' vcov(mod1.3)
+#'
+#' ## Computing OddsRatio and confidence intervals for age ...
+#' exp(coef(mod1.3))[-1]
+#' exp(confint(mod1.3))[-1, ]
 "chdage"
