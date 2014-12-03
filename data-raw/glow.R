@@ -1,5 +1,8 @@
 
 source("utils.r")
+
+## GLOW500
+## -------
 glow500 <- read.table(file = "GLOW/GLOW500.txt",
                       as.is = TRUE,
                       header = TRUE)
@@ -25,3 +28,27 @@ dim(glow500)
 summary(glow500)
 
 save("glow500", file = "../data/glow500.rda")
+
+## GLOW11M
+## -------
+glow11m <- read.table(file = "GLOW/GLOW11M.txt",
+                      as.is = TRUE,
+                      header = TRUE)
+names(glow11m) <- tolower(names(glow11m))
+
+glow11m <- within(glow11m, {
+  priorfrac <- noYes(priorfrac)
+  premeno <- noYes(premeno)
+  momfrac <- noYes(momfrac)
+  armassist <- noYes(armassist)
+  smoke <- noYes(smoke)
+  raterisk <- factor(raterisk, levels = o3,
+                     labels = raterisk.label[["short"]])
+  fracture <- noYes(fracture)
+})
+glow11m <- glow11m[order(glow11m$pair, glow11m$sub_id), ]
+rownames(glow11m) <- NULL
+dim(glow11m)
+summary(glow11m)
+
+save("glow11m", file = "../data/glow11m.rda")

@@ -1,5 +1,8 @@
 > 
 > source("utils.r")
+> 
+> ## GLOW500
+> ## -------
 > glow500 <- read.table(file = "GLOW/GLOW500.txt",
 +                       as.is = TRUE,
 +                       header = TRUE)
@@ -47,4 +50,57 @@
                          Max.   :11.000            
 > 
 > save("glow500", file = "../data/glow500.rda")
+> 
+> ## GLOW11M
+> ## -------
+> glow11m <- read.table(file = "GLOW/GLOW11M.txt",
++                       as.is = TRUE,
++                       header = TRUE)
+> names(glow11m) <- tolower(names(glow11m))
+> 
+> glow11m <- within(glow11m, {
++   priorfrac <- noYes(priorfrac)
++   premeno <- noYes(premeno)
++   momfrac <- noYes(momfrac)
++   armassist <- noYes(armassist)
++   smoke <- noYes(smoke)
++   raterisk <- factor(raterisk, levels = o3,
++                      labels = raterisk.label[["short"]])
++   fracture <- noYes(fracture)
++ })
+> glow11m <- glow11m[order(glow11m$pair, glow11m$sub_id), ]
+> rownames(glow11m) <- NULL
+> dim(glow11m)
+[1] 238  16
+> summary(glow11m)
+      pair            sub_id         site_id          phy_id     
+ Min.   :  1.00   Min.   :  2.0   Min.   :1.000   Min.   :  1.0  
+ 1st Qu.: 30.25   1st Qu.:178.5   1st Qu.:2.000   1st Qu.: 65.0  
+ Median : 60.00   Median :375.0   Median :3.000   Median :186.5  
+ Mean   : 60.00   Mean   :311.0   Mean   :3.538   Mean   :185.6  
+ 3rd Qu.: 89.75   3rd Qu.:439.8   3rd Qu.:5.000   3rd Qu.:296.0  
+ Max.   :119.00   Max.   :500.0   Max.   :6.000   Max.   :325.0  
+      age            height          weight            bmi        priorfrac
+ Min.   :56.00   Min.   :134.0   Min.   : 39.90   Min.   :15.02   No :163  
+ 1st Qu.:64.25   1st Qu.:157.0   1st Qu.: 59.23   1st Qu.:23.04   Yes: 75  
+ Median :71.00   Median :160.0   Median : 68.00   Median :26.32            
+ Mean   :71.19   Mean   :160.8   Mean   : 70.97   Mean   :27.41            
+ 3rd Qu.:77.75   3rd Qu.:165.0   3rd Qu.: 79.40   3rd Qu.:30.95            
+ Max.   :89.00   Max.   :178.0   Max.   :124.70   Max.   :44.04            
+ premeno   momfrac   armassist smoke        raterisk    fracscore     
+ No :195   No :198   No :137   No :224   Less   :72   Min.   : 0.000  
+ Yes: 43   Yes: 40   Yes:101   Yes: 14   Same   :89   1st Qu.: 2.000  
+                                         Greater:77   Median : 4.500  
+                                                      Mean   : 4.437  
+                                                      3rd Qu.: 6.000  
+                                                      Max.   :11.000  
+ fracture 
+ No :119  
+ Yes:119  
+          
+          
+          
+          
+> 
+> save("glow11m", file = "../data/glow11m.rda")
 > 
