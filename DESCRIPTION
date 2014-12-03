@@ -1,12 +1,13 @@
 Package: aplore3
-Title: Datasets from Hosmer, Lemeshow, Sturdivant "Applied Logistic
+Title: Datasets from Hosmer, Lemeshow and Sturdivant, "Applied Logistic
     Regression" (3rd ed.)
-Version: 0.4
+Version: 0.5
 Authors@R: "Luca Braglia <lbraglia@gmail.com> [aut, cre]"
-Description: This package is a 'unofficial' companion to the textbook Applied
-    Logistic Regression (3rd ed., 2013) by DW. Hosmer, S. Lemeshow and
-    RX. Sturdivant. It includes all the data sets used in the book, to
-    make even more quick/simple to reproduce analysis from R.
+Description: This package is a unofficial companion to the textbook "Applied
+    Logistic Regression" by D.W. Hosmer, S. Lemeshow and
+    R.X. Sturdivant (3rd ed.). See ?aplore3 for more info.
+URL: https://github.com/lbraglia/aplore3
+BugReports: https://github.com/lbraglia/aplore3
 Depends:
     R (>= 3.1.1)
 License: GPL-3
@@ -14,5 +15,5 @@ LazyData: true
 VignetteBuilder: knitr
 Suggests:
     knitr,
-    xtable,
+    survival,
     pROC
