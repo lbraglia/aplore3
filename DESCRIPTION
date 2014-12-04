@@ -15,5 +15,6 @@ LazyData: true
 VignetteBuilder: knitr
 Suggests:
     knitr,
+    MASS,
     survival,
     pROC
