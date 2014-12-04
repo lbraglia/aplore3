@@ -44,10 +44,6 @@
 #' vcov(mod1.3)
 #'
 #' ## Computing OddsRatio and confidence intervals for age ...
-#' ## TRAVIS tests: MASS missing ?
-#' rownames(installed.packages())
-#' sessionInfo()
 #' exp(coef(mod1.3))[-1]
 #' exp(confint(mod1.3))[-1, ]
-#' 
 "chdage"
