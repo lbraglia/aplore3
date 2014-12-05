@@ -16,5 +16,7 @@ VignetteBuilder: knitr
 Suggests:
     knitr,
     MASS,
+    vcdExtra,
+    nnet,
     survival,
     pROC

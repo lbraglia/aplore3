@@ -66,7 +66,7 @@ mod4.16 <- glm(fracture ~ age * priorfrac + height + momfrac * armassist +
                           I(as.integer(raterisk) == 3) ,
                family = binomial,
                data = glow500)
-if(require(vcdExtra)) HLtest(mod4.16)
+if(require(vcdExtra)) summary(HLtest(mod4.16))
 
 ## Table 5.3 p. 171 - Classification table
 glow500$pred4.16 <- predict(mod4.16, type = "response")
