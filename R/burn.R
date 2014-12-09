@@ -24,3 +24,47 @@
 #' summary(mod3.15 <- glm(death ~ tbsa + inh_inj + age + gender + flame + race,
 #'                        family = binomial, data = burn1000 ))
 "burn1000"
+
+
+#' BURN_EVAL_1 data
+#' 
+#' burn_eval_1 dataset.
+#' 
+#' @format A data.frame with 500 rows and 9 variables: the covariate are
+#' the same as those from \code{\link{burn1000}}.
+#' @source Hosmer, D.W., Lemeshow, S. and Sturdivant, R.X. (2013) Applied
+#' Logistic Regression, 3rd ed., New York: Wiley
+#' @examples
+#' head(burn_eval_1, n = 10)
+#' summary(burn_eval_1)
+"burn_eval_1"
+
+#' BURN_EVAL_2 data
+#' 
+#' burn_eval_2 dataset.
+#' 
+#' @format A data.frame with 500 rows and 9 variables: the covariate are
+#' the same as those from \code{\link{burn1000}}.
+#' @source Hosmer, D.W., Lemeshow, S. and Sturdivant, R.X. (2013) Applied
+#' Logistic Regression, 3rd ed., New York: Wiley
+#' @examples
+#' head(burn_eval_2, n = 10)
+#' summary(burn_eval_2)
+"burn_eval_2"
+
+#' BURN13M data
+#' 
+#' burn13m dataset.
+#' 
+#' @format A data.frame with 388 rows and 11 variables: the covariate are
+#' the same as those from \code{\link{burn1000}} with the addition of
+#' \describe{
+#' \item{pair}{Pair Identification Code (1-119)}
+#' \item{pairid}{Subject Identification Code within pair (1-4)}
+#' }
+#' @source Hosmer, D.W., Lemeshow, S. and Sturdivant, R.X. (2013) Applied
+#' Logistic Regression, 3rd ed., New York: Wiley
+#' @examples
+#' head(burn13m, n = 10)
+#' summary(burn13m)
+"burn13m"
