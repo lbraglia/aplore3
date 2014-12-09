@@ -17,7 +17,7 @@
 #' Datasets and variables have lower-case name with respect to the
 #' original sources. Categorical data were packaged as factor.
 #'
-#' Regardin coding, help pages lists the internal/factor representation
+#' Regarding data coding, help pages lists the internal/factor representation
 #' of the data (eg 1: No, 2: Yes), not the original one (eg 0: No, 1:
 #' Yes). This is intended to allow easier/safer recoding based on
 #' as.integer, especially for multinomial variables. 
