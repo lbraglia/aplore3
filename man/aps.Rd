@@ -42,17 +42,17 @@ summary(aps)
 if (require(nnet)) {
   levels(aps$place3) <- abbreviate(levels(aps$place3))
   modt8.2 <- multinom(place3 ~ viol, data = aps)
-  summary(modt8.2)
-  exp(coef(modt8.2)[, "violYes"])
-  t(exp(confint(modt8.2)["violYes", ,]))
+  print(summary(modt8.2))
+  print(exp(coef(modt8.2)[, "violYes"]))
+  print(t(exp(confint(modt8.2)["violYes", ,])))
   ## To test differences between b_2 and b_1 we need the estimated variance
   ## covariance matrix for the fitted model (Table 8.3 p. 274).
-  vcov(modt8.2) # 'raw'
+  print(vcov(modt8.2)) # 'raw'
   ## To have exactly the same output as the text we need to rearrange just a
   ## minimum
   VarCovM <- vcov(modt8.2)[c(2, 1, 4, 3), c(2, 1, 4, 3)]
   VarCovM[upper.tri(VarCovM)] <- NA
-  VarCovM
+  print(VarCovM)
   ## Testing against null model.
   modt8.2Null <- multinom(place3 ~ 1, data = aps)
   anova(modt8.2, modt8.2Null, test = "Chisq")

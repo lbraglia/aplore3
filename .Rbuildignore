@@ -1,4 +1,4 @@
 ^\.travis\.yml
 ^appveyor\.yml
 ^data-raw$
-R/template\.R
+R/template

@@ -75,9 +75,9 @@ with(glow500, addmargins(table( pred4.16 > 0.5, fracture)))
 ## Sensitivy, specificity, ROC (using pROC)
 if(require(pROC)){
 
-  ## Figure 5.1 p. 177 - ROC curve (using pROC package)
+  ## Figure 5.3 p. 177 - ROC curve (using pROC package)
   print(roc4.16 <- roc(fracture ~ pred4.16, data = glow500))
-  plot(roc4.16)
+  plot(roc4.16, main = "Figure 5.3 p. 177")
 
   ## Table 5.8 p. 175
   vars <- c("thresholds","sensitivities","specificities")
@@ -89,12 +89,13 @@ if(require(pROC)){
   tableIndex <- mapply(findIndex, y = cutPoints,
                        MoreArgs = list(x = roc4.16$thresholds))
   ## And finally, let's print a reasonable approximation of table 5.8
-  tab5.8[tableIndex, ]
+  writeLines("\\nTable 5.8 p. 175\\n")
+  print(tab5.8[tableIndex, ])
 
   ## Figure 5.1 p. 175
   plot(specificities ~ thresholds, xlim = c(0, 1), type = "l",
        xlab = "Probabilty cutoff", ylab = "Sensitivity/specificity",
-       ylim = c(0, 1), data = tab5.8)
+       ylim = c(0, 1), data = tab5.8, main = "Figure 5.1 p. 175")
   with(tab5.8, lines(thresholds, sensitivities, col = "red"))
   legend(x = 0.75, y = 0.55, legend = c("Sensitivity", "Specificity"),
          lty = 1, col = c("red","black"))
