@@ -1,0 +1,5 @@
+\chapter{\texttt{scale\_example}}
+
+<<>>=
+example(scale_example)
+@ 

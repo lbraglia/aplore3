@@ -1,0 +1,21 @@
+\chapter{\texttt{burn} datasets}
+
+\section{\texttt{burn1000}}
+<<>>=
+example(burn1000)
+@ 
+
+\section{\texttt{burn13m}}
+<<>>=
+example(burn13m)
+@ 
+
+\section{\texttt{burn\_eval\_1}}
+<<>>=
+example(burn_eval_1)
+@ 
+
+\section{\texttt{burn\_eval\_2}}
+<<>>=
+example(burn_eval_2)
+@ 

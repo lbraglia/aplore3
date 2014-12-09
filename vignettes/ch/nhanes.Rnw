@@ -1,0 +1,5 @@
+\chapter{\texttt{nhanes}}
+
+<<>>=
+example(nhanes)
+@ 

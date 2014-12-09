@@ -3,14 +3,14 @@
 %% \usepackage[utf8]{inputenc}
 \usepackage{hyperref}
 % \VignetteEngine{knitr::knitr}
-% \VignetteIndexEntry{Reproducing ``Applied Logistic Regression'' with R}
+% \VignetteIndexEntry{Examples from the aplore3 package}
 % \VignetteKeyword{hosmer}
 % \VignetteKeyword{lemeshow}
 % \VignetteKeyword{sturdivant}
 % \VignetteKeyword{applied}
 % \VignetteKeyword{logistic}
 % \VignetteKeyword{regression}
-\title{Reproducing ``Applied Logistic Regression'' with R}
+\title{Examples from the \texttt{aplore3} package}
 \author{Luca Braglia}
 \begin{document}
 
@@ -25,8 +25,19 @@ set.seed(13141712)
 options(width = 75)
 @ 
 
-\Sexpr{knit_child("ch/01_intro.Rnw")}
-\Sexpr{knit_child("ch/02_multipleRegression.Rnw")}
+\Sexpr{knit_child("ch/aps.Rnw")}
+\Sexpr{knit_child("ch/burn.Rnw")}
+\Sexpr{knit_child("ch/chdage.Rnw")}
+\Sexpr{knit_child("ch/glow.Rnw")}
+\Sexpr{knit_child("ch/icu.Rnw")}
+\Sexpr{knit_child("ch/lowbwt.Rnw")}
+\Sexpr{knit_child("ch/myopia.Rnw")}
+\Sexpr{knit_child("ch/nhanes.Rnw")}
+\Sexpr{knit_child("ch/polypharm.Rnw")}
+\Sexpr{knit_child("ch/scale_example.Rnw")}
+
+%% \Sexpr{knit_child("ch/01_intro.Rnw")}
+%% \Sexpr{knit_child("ch/02_multipleRegression.Rnw")}
 %% \Sexpr{knit_child("ch/03_interpretation.Rnw")}
 %% \Sexpr{knit_child("ch/04_modelBuilding.Rnw")}
 %% \Sexpr{knit_child("ch/05_assessingFit.Rnw")}
@@ -35,6 +46,5 @@ options(width = 75)
 %% \Sexpr{knit_child("ch/08_multinomialOrdered.Rnw")}
 %% \Sexpr{knit_child("ch/09_correlatedData.Rnw")}
 %% \Sexpr{knit_child("ch/10_specialTopics.Rnw")}
-
 
 \end{document}

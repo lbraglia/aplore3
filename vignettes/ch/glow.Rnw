@@ -1,0 +1,26 @@
+\chapter{\texttt{glow} datasets}
+
+\section{\texttt{glow500}}
+<<>>=
+example(glow500)
+@ 
+
+\section{\texttt{glow\_bonemed}}
+<<>>=
+example(glow_bonemed)
+@ 
+
+\section{\texttt{glow\_mis\_comp}}
+<<>>=
+example(glow_mis_comp)
+@ 
+
+\section{\texttt{glow\_mis\_wmissing}}
+<<>>=
+example(glow_mis_wmissing)
+@ 
+
+\section{\texttt{glow\_rand}}
+<<>>=
+example(glow_rand)
+@ 

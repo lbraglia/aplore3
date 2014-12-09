@@ -1,1 +1,0 @@
-\chapter{Logistic Regression Models for the Analysis of Correlated Data}

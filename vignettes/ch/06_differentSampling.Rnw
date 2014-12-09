@@ -1,1 +1,0 @@
-\chapter{Application of Logistic Regression with Different Sampling Models}
