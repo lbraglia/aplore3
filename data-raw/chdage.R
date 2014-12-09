@@ -17,4 +17,4 @@ rownames(chdage) <- NULL
 dim(chdage)
 summary(chdage)
 
-save("chdage", file = "../data/chdage.rda")
+save("chdage", file = "../data/chdage.rda", compress = "bzip2")

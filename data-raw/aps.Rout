@@ -64,5 +64,5 @@
  3rd Qu.:7.000                      
  Max.   :9.000                      
 > 
-> save("aps", file = "../data/aps.rda")
+> save("aps", file = "../data/aps.rda", compress = "bzip2")
 > 

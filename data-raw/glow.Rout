@@ -49,7 +49,7 @@
                          3rd Qu.: 5.000            
                          Max.   :11.000            
 > 
-> save("glow500", file = "../data/glow500.rda")
+> save("glow500", file = "../data/glow500.rda", compress = "bzip2")
 > 
 > ## GLOW11M
 > ## -------
@@ -102,7 +102,7 @@
           
           
 > 
-> save("glow11m", file = "../data/glow11m.rda")
+> save("glow11m", file = "../data/glow11m.rda", compress = "bzip2")
 > 
 > 
 > ## GLOW_BONEMED
@@ -163,7 +163,7 @@
           
           
 > 
-> save("glow_bonemed", file = "../data/glow_bonemed.rda")
+> save("glow_bonemed", file = "../data/glow_bonemed.rda", compress = "bzip2")
 > 
 > ## GLOW_MIS_COMP
 > ## -------
@@ -199,7 +199,7 @@
  3rd Qu.: 81.30   3rd Qu.:165.0                                    
  Max.   :127.00   Max.   :199.0                                    
 > 
-> save("glow_mis_comp", file = "../data/glow_mis_comp.rda")
+> save("glow_mis_comp", file = "../data/glow_mis_comp.rda", compress = "bzip2")
 > 
 > ## GLOW_MIS_WMISSING
 > ## -------
@@ -237,7 +237,8 @@
  Max.   :127.00   Max.   :199.0                                      
  NA's   :100      NA's   :100                                        
 > 
-> save("glow_mis_wmissing", file = "../data/glow_mis_wmissing.rda")
+> save("glow_mis_wmissing", file = "../data/glow_mis_wmissing.rda",
++      compress = "bzip2")
 > 
 > ## GLOW_RAND
 > ## -------
@@ -283,5 +284,5 @@
                          3rd Qu.: 5.000            
                          Max.   :10.000            
 > 
-> save("glow_rand", file = "../data/glow_rand.rda")
+> save("glow_rand", file = "../data/glow_rand.rda", compress = "bzip2")
 > 

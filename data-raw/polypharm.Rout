@@ -53,5 +53,5 @@
                      3rd Qu.:13.75  
                      Max.   :18.92  
 > 
-> save("polypharm", file = "../data/polypharm.rda")
+> save("polypharm", file = "../data/polypharm.rda", compress = "bzip2")
 > 

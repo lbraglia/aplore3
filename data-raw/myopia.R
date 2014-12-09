@@ -17,4 +17,4 @@ rownames(myopia) <- NULL
 dim(myopia)
 summary(myopia)
 
-save("myopia", file = "../data/myopia.rda")
+save("myopia", file = "../data/myopia.rda", compress = "bzip2")

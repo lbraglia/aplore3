@@ -23,7 +23,7 @@ rownames(burn1000) <- NULL
 dim(burn1000)
 summary(burn1000)
 
-save("burn1000", file = "../data/burn1000.rda")
+save("burn1000", file = "../data/burn1000.rda", compress = "bzip2")
 
 ## BURN_EVAL_1
 burn_eval_1 <- read.table(file = "BURN/BURN_EVAL_1.txt",
@@ -44,7 +44,7 @@ rownames(burn_eval_1) <- NULL
 dim(burn_eval_1)
 summary(burn_eval_1)
 
-save("burn_eval_1", file = "../data/burn_eval_1.rda")
+save("burn_eval_1", file = "../data/burn_eval_1.rda", compress = "bzip2")
 
 ## BURN_EVAL_2
 burn_eval_2 <- read.table(file = "BURN/BURN_EVAL_2.txt",
@@ -65,7 +65,7 @@ rownames(burn_eval_2) <- NULL
 dim(burn_eval_2)
 summary(burn_eval_2)
 
-save("burn_eval_2", file = "../data/burn_eval_2.rda")
+save("burn_eval_2", file = "../data/burn_eval_2.rda", compress = "bzip2")
 
 ## BURN13M
 burn13m <- read.table(file = "BURN/BURN13M.txt",
@@ -86,4 +86,4 @@ rownames(burn13m) <- NULL
 dim(burn13m)
 summary(burn13m)
 
-save("burn13m", file = "../data/burn13m.rda")
+save("burn13m", file = "../data/burn13m.rda", compress = "bzip2")

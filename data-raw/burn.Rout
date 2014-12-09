@@ -38,7 +38,7 @@
                  3rd Qu.:16.00                      
                  Max.   :98.00                      
 > 
-> save("burn1000", file = "../data/burn1000.rda")
+> save("burn1000", file = "../data/burn1000.rda", compress = "bzip2")
 > 
 > ## BURN_EVAL_1
 > burn_eval_1 <- read.table(file = "BURN/BURN_EVAL_1.txt",
@@ -74,7 +74,7 @@
                  3rd Qu.: 13.625                      
                  Max.   :100.000                      
 > 
-> save("burn_eval_1", file = "../data/burn_eval_1.rda")
+> save("burn_eval_1", file = "../data/burn_eval_1.rda", compress = "bzip2")
 > 
 > ## BURN_EVAL_2
 > burn_eval_2 <- read.table(file = "BURN/BURN_EVAL_2.txt",
@@ -110,7 +110,7 @@
                  3rd Qu.:19.275                      
                  Max.   :98.500                      
 > 
-> save("burn_eval_2", file = "../data/burn_eval_2.rda")
+> save("burn_eval_2", file = "../data/burn_eval_2.rda", compress = "bzip2")
 > 
 > ## BURN13M
 > burn13m <- read.table(file = "BURN/BURN13M.txt",
@@ -153,5 +153,5 @@
           
           
 > 
-> save("burn13m", file = "../data/burn13m.rda")
+> save("burn13m", file = "../data/burn13m.rda", compress = "bzip2")
 > 

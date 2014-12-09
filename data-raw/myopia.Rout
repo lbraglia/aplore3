@@ -46,5 +46,5 @@
  3rd Qu.: 2.00   3rd Qu.:12.000   3rd Qu.: 34.00                      
  Max.   :15.00   Max.   :31.000   Max.   :101.00                      
 > 
-> save("myopia", file = "../data/myopia.rda")
+> save("myopia", file = "../data/myopia.rda", compress = "bzip2")
 > 

@@ -13,4 +13,4 @@ scale_example <- within(scale_example, {
 dim(scale_example)
 summary(scale_example)
 
-save("scale_example", file = "../data/scale_example.rda")
+save("scale_example", file = "../data/scale_example.rda", compress = "bzip2")

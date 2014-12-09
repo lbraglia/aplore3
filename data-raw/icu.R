@@ -41,4 +41,4 @@ rownames(icu) <- NULL
 dim(icu)
 summary(icu)
 
-save("icu", file = "../data/icu.rda")
+save("icu", file = "../data/icu.rda", compress = "bzip2")

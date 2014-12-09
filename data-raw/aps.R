@@ -35,4 +35,4 @@ rownames(aps) <- NULL
 dim(aps)
 summary(aps)
 
-save("aps", file = "../data/aps.rda")
+save("aps", file = "../data/aps.rda", compress = "bzip2")

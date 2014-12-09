@@ -37,5 +37,5 @@
                                                                3rd Qu.:3475  
                                                                Max.   :4990  
 > 
-> save("lowbwt", file = "../data/lowbwt.rda")
+> save("lowbwt", file = "../data/lowbwt.rda", compress = "bzip2")
 > 

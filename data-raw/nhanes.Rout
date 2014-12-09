@@ -64,5 +64,5 @@
                          Max.   :840.0              
                          NA's   :79                 
 > 
-> save("nhanes", file = "../data/nhanes.rda")
+> save("nhanes", file = "../data/nhanes.rda", compress = "bzip2")
 > 

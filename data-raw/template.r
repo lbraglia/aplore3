@@ -17,4 +17,4 @@ rownames(dataset) <- NULL
 dim(dataset)
 summary(dataset)
 
-save("dataset", file = "../data/dataset.rda")
+save("dataset", file = "../data/dataset.rda", compress = "bzip2")

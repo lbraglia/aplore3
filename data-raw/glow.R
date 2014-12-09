@@ -27,7 +27,7 @@ rownames(glow500) <- NULL
 dim(glow500)
 summary(glow500)
 
-save("glow500", file = "../data/glow500.rda")
+save("glow500", file = "../data/glow500.rda", compress = "bzip2")
 
 ## GLOW11M
 ## -------
@@ -51,7 +51,7 @@ rownames(glow11m) <- NULL
 dim(glow11m)
 summary(glow11m)
 
-save("glow11m", file = "../data/glow11m.rda")
+save("glow11m", file = "../data/glow11m.rda", compress = "bzip2")
 
 
 ## GLOW_BONEMED
@@ -83,7 +83,7 @@ rownames(glow_bonemed) <- NULL
 dim(glow_bonemed)
 summary(glow_bonemed)
 
-save("glow_bonemed", file = "../data/glow_bonemed.rda")
+save("glow_bonemed", file = "../data/glow_bonemed.rda", compress = "bzip2")
 
 ## GLOW_MIS_COMP
 ## -------
@@ -104,7 +104,7 @@ rownames(glow_mis_comp) <- NULL
 dim(glow_mis_comp)
 summary(glow_mis_comp)
 
-save("glow_mis_comp", file = "../data/glow_mis_comp.rda")
+save("glow_mis_comp", file = "../data/glow_mis_comp.rda", compress = "bzip2")
 
 ## GLOW_MIS_WMISSING
 ## -------
@@ -125,7 +125,8 @@ rownames(glow_mis_wmissing) <- NULL
 dim(glow_mis_wmissing)
 summary(glow_mis_wmissing)
 
-save("glow_mis_wmissing", file = "../data/glow_mis_wmissing.rda")
+save("glow_mis_wmissing", file = "../data/glow_mis_wmissing.rda",
+     compress = "bzip2")
 
 ## GLOW_RAND
 ## -------
@@ -149,4 +150,4 @@ rownames(glow_rand) <- NULL
 dim(glow_rand)
 summary(glow_rand)
 
-save("glow_rand", file = "../data/glow_rand.rda")
+save("glow_rand", file = "../data/glow_rand.rda", compress = "bzip2")

@@ -22,4 +22,4 @@ rownames(lowbwt) <- NULL
 dim(lowbwt)
 summary(lowbwt)
 
-save("lowbwt", file = "../data/lowbwt.rda")
+save("lowbwt", file = "../data/lowbwt.rda", compress = "bzip2")

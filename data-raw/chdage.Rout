@@ -26,5 +26,5 @@
  Max.   :100.00   Max.   :69.00   20-39  :10           
                                   (Other):18           
 > 
-> save("chdage", file = "../data/chdage.rda")
+> save("chdage", file = "../data/chdage.rda", compress = "bzip2")
 > 

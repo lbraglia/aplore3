@@ -31,4 +31,4 @@ rownames(polypharm) <- NULL
 dim(polypharm)
 summary(polypharm)
 
-save("polypharm", file = "../data/polypharm.rda")
+save("polypharm", file = "../data/polypharm.rda", compress = "bzip2")

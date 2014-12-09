@@ -23,4 +23,4 @@ rownames(nhanes) <- NULL
 dim(nhanes)
 summary(nhanes)
 
-save("nhanes", file = "../data/nhanes.rda")
+save("nhanes", file = "../data/nhanes.rda", compress = "bzip2")
