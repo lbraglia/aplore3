@@ -116,3 +116,65 @@
 #'   summary(mod7.2)
 #' }
 "glow11m"
+
+
+#' GLOW_BONEMED data
+#' 
+#' glow_bonemed dataset.
+#' 
+#' @format A data.frame with 500 rows and 18 variables: the covariate are
+#' the same as those from \code{\link{glow500}} with the addition of
+#' \describe{
+#' \item{bonemed}{Bone medications at enrollment (1: No, 2: Yes)}
+#' \item{bonemed_fu}{Bone medications at follow-up (1: No, 2: Yes)}
+#' \item{bonetreat}{Bone medications both at enrollment and follow-up (1: No,
+#' 2: Yes)}
+#' }
+#' @source Hosmer, D.W., Lemeshow, S. and Sturdivant, R.X. (2013) Applied
+#' Logistic Regression, 3rd ed., New York: Wiley
+#' @examples
+#' head(glow_bonemed, n = 10)
+#' summary(glow_bonemed)
+"glow_bonemed"
+
+
+#' GLOW_MIS_COMP data
+#' 
+#' glow_mis_comp dataset.
+#' 
+#' @format A data.frame with 500 rows and 10 variables: the covariate are
+#' the same as those from \code{\link{glow500}}, without \code{bmi},
+#' \code{premeno}, \code{armassist}, \code{smoke} and \code{fracscore}.
+#' @source Hosmer, D.W., Lemeshow, S. and Sturdivant, R.X. (2013) Applied
+#' Logistic Regression, 3rd ed., New York: Wiley
+#' @examples
+#' head(glow_mis_comp, n = 10)
+#' summary(glow_mis_comp)
+"glow_mis_comp"
+
+#' GLOW_MIS_WMISSING data
+#' 
+#' glow_mis_wmissing dataset.
+#' 
+#' @format A data.frame with 500 rows and 10 variables: the covariate are
+#' the same as those from \code{\link{glow500}}, without \code{bmi},
+#' \code{premeno}, \code{armassist}, \code{smoke} and \code{fracscore}.
+#' @source Hosmer, D.W., Lemeshow, S. and Sturdivant, R.X. (2013) Applied
+#' Logistic Regression, 3rd ed., New York: Wiley
+#' @examples
+#' head(glow_mis_wmissing, n = 10)
+#' summary(glow_mis_wmissing)
+"glow_mis_wmissing"
+
+#' GLOW_RAND data
+#' 
+#' glow_rand dataset.
+#' 
+#' @format A data.frame with 500 rows and 15 variables: the covariate are
+#' the same as those from \code{\link{glow500}}.
+#' @source Hosmer, D.W., Lemeshow, S. and Sturdivant, R.X. (2013) Applied
+#' Logistic Regression, 3rd ed., New York: Wiley
+#' @examples
+#' head(glow_rand, n = 10)
+#' summary(glow_rand)
+"glow_rand"

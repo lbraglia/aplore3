@@ -23,6 +23,8 @@ rownames(burn1000) <- NULL
 dim(burn1000)
 summary(burn1000)
 
+save("burn1000", file = "../data/burn1000.rda")
+
 ## BURN_EVAL_1
 burn_eval_1 <- read.table(file = "BURN/BURN_EVAL_1.txt",
                      as.is = TRUE,
@@ -41,6 +43,8 @@ burn_eval_1 <- burn_eval_1[order(burn_eval_1$id), ]
 rownames(burn_eval_1) <- NULL
 dim(burn_eval_1)
 summary(burn_eval_1)
+
+save("burn_eval_1", file = "../data/burn_eval_1.rda")
 
 ## BURN_EVAL_2
 burn_eval_2 <- read.table(file = "BURN/BURN_EVAL_2.txt",
@@ -61,6 +65,8 @@ rownames(burn_eval_2) <- NULL
 dim(burn_eval_2)
 summary(burn_eval_2)
 
+save("burn_eval_2", file = "../data/burn_eval_2.rda")
+
 ## BURN13M
 burn13m <- read.table(file = "BURN/BURN13M.txt",
                      as.is = TRUE,
@@ -80,8 +86,4 @@ rownames(burn13m) <- NULL
 dim(burn13m)
 summary(burn13m)
 
-## Saving datasets
-save("burn1000", file = "../data/burn1000.rda")
-save("burn_eval_1", file = "../data/burn_eval_1.rda")
-save("burn_eval_2", file = "../data/burn_eval_2.rda")
 save("burn13m", file = "../data/burn13m.rda")

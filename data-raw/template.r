@@ -1,10 +1,13 @@
 
 source("utils.r")
+## var.label <- c("foo","bar")
+
+## DATASET
+## -------
 dataset <- read.table(file = "DATASET/DATASET.txt",
                       as.is = TRUE,
                       header = TRUE)
 names(dataset) <- tolower(names(dataset))
-## var.label <- c("foo","bar")
 
 dataset <- within(dataset, {
 

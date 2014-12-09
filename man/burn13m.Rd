@@ -7,6 +7,7 @@
 the same as those from \code{\link{burn1000}} with the addition of
 \describe{
 \item{pair}{Pair Identification Code (1-119)}
+\item{pairid}{Subject Identification Code within pair (1-4)}
 }}
 \source{
 Hosmer, D.W., Lemeshow, S. and Sturdivant, R.X. (2013) Applied

@@ -1,5 +1,7 @@
 > 
 > source("utils.r")
+> 
+> ## BURN1000
 > burn1000 <- read.table(file = "BURN/BURN1000.txt",
 +                      as.is = TRUE,
 +                      header = TRUE)
@@ -37,4 +39,119 @@
                  Max.   :98.00                      
 > 
 > save("burn1000", file = "../data/burn1000.rda")
+> 
+> ## BURN_EVAL_1
+> burn_eval_1 <- read.table(file = "BURN/BURN_EVAL_1.txt",
++                      as.is = TRUE,
++                      header = TRUE)
+> names(burn_eval_1) <- tolower(names(burn_eval_1))
+> names(burn_eval_1)[6] <- "race"
+> 
+> burn_eval_1 <- within(burn_eval_1, {
++   death <- factor(death, levels = z1, labels = death.labels)
++   gender <- factor(gender, levels = z1, labels = gender.labels)
++   race <- factor(race, levels = z1, labels = race.labels )
++   inh_inj <- noYes(inh_inj)
++   flame <- noYes(flame)
++ })
+> burn_eval_1 <- burn_eval_1[order(burn_eval_1$id), ]
+> rownames(burn_eval_1) <- NULL
+> dim(burn_eval_1)
+[1] 500   9
+> summary(burn_eval_1)
+       id           facility       death          age           gender   
+ Min.   :  1.0   Min.   : 1.00   Alive:428   Min.   : 0.10   Female:156  
+ 1st Qu.:125.8   1st Qu.:15.00   Dead : 72   1st Qu.:14.15   Male  :344  
+ Median :250.5   Median :32.00               Median :35.45               
+ Mean   :250.5   Mean   :32.67               Mean   :34.96               
+ 3rd Qu.:375.2   3rd Qu.:48.00               3rd Qu.:51.92               
+ Max.   :500.0   Max.   :83.00               Max.   :89.00               
+        race          tbsa         inh_inj   flame    
+ Non-White:197   Min.   :  0.100   No :434   No :230  
+ White    :303   1st Qu.:  2.225   Yes: 66   Yes:270  
+                 Median :  6.000                      
+                 Mean   : 13.762                      
+                 3rd Qu.: 13.625                      
+                 Max.   :100.000                      
+> 
+> save("burn_eval_1", file = "../data/burn_eval_1.rda")
+> 
+> ## BURN_EVAL_2
+> burn_eval_2 <- read.table(file = "BURN/BURN_EVAL_2.txt",
++                      as.is = TRUE,
++                      header = TRUE)
+> names(burn_eval_2) <- tolower(names(burn_eval_2))
+> names(burn_eval_2)[6] <- "race"
+> 
+> burn_eval_2 <- within(burn_eval_2, {
++   death <- factor(death, levels = z1, labels = death.labels)
++   gender <- factor(gender, levels = z1, labels = gender.labels)
++   race <- factor(race, levels = z1, labels = race.labels )
++   inh_inj <- noYes(inh_inj)
++   flame <- noYes(flame)
++ })
+> burn_eval_2 <- burn_eval_2[order(burn_eval_2$id), ]
+> rownames(burn_eval_2) <- NULL
+> dim(burn_eval_2)
+[1] 500   9
+> summary(burn_eval_2)
+       id           facility       death          age           gender   
+ Min.   :  1.0   Min.   : 1.00   Alive:379   Min.   : 0.10   Female:152  
+ 1st Qu.:125.8   1st Qu.:15.00   Dead :121   1st Qu.:13.45   Male  :348  
+ Median :250.5   Median :32.00               Median :33.40               
+ Mean   :250.5   Mean   :32.14               Mean   :35.27               
+ 3rd Qu.:375.2   3rd Qu.:48.00               3rd Qu.:52.98               
+ Max.   :500.0   Max.   :83.00               Max.   :89.16               
+        race          tbsa        inh_inj   flame    
+ Non-White:190   Min.   : 0.100   No :437   No :235  
+ White    :310   1st Qu.: 2.375   Yes: 63   Yes:265  
+                 Median : 6.500                      
+                 Mean   :15.204                      
+                 3rd Qu.:19.275                      
+                 Max.   :98.500                      
+> 
+> save("burn_eval_2", file = "../data/burn_eval_2.rda")
+> 
+> ## BURN13M
+> burn13m <- read.table(file = "BURN/BURN13M.txt",
++                      as.is = TRUE,
++                      header = TRUE)
+> names(burn13m) <- tolower(names(burn13m))
+> names(burn13m)[8] <- "race"
+> 
+> burn13m <- within(burn13m, {
++   death <- factor(death, levels = z1, labels = death.labels)
++   gender <- factor(gender, levels = z1, labels = gender.labels)
++   race <- factor(race, levels = z1, labels = race.labels )
++   inh_inj <- noYes(inh_inj)
++   flame <- noYes(flame)
++ })
+> burn13m <- burn13m[order(burn13m$pair, burn13m$pairid), ]
+> rownames(burn13m) <- NULL
+> dim(burn13m)
+[1] 388  11
+> summary(burn13m)
+      pair        pairid           id            facility      death    
+ Min.   : 1   Min.   :1.00   Min.   :   1.0   Min.   : 1.0   Alive:291  
+ 1st Qu.:25   1st Qu.:1.75   1st Qu.: 286.8   1st Qu.:15.0   Dead : 97  
+ Median :49   Median :2.50   Median : 554.5   Median :32.0              
+ Mean   :49   Mean   :2.50   Mean   : 547.1   Mean   :33.4              
+ 3rd Qu.:73   3rd Qu.:3.25   3rd Qu.: 850.5   3rd Qu.:50.0              
+ Max.   :97   Max.   :4.00   Max.   :1000.0   Max.   :83.0              
+      age           gender           race          tbsa       inh_inj  
+ Min.   : 0.60   Female:116   Non-White:154   Min.   : 0.10   No :301  
+ 1st Qu.:38.30   Male  :272   White    :234   1st Qu.: 3.00   Yes: 87  
+ Median :49.75                                Median : 9.50            
+ Mean   :47.32                                Mean   :19.47            
+ 3rd Qu.:60.45                                3rd Qu.:24.50            
+ Max.   :89.70                                Max.   :98.00            
+ flame    
+ No :137  
+ Yes:251  
+          
+          
+          
+          
+> 
+> save("burn13m", file = "../data/burn13m.rda")
 > 

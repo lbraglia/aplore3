@@ -1,5 +1,9 @@
 > 
 > source("utils.r")
+> raterisk.label <- list(`long` = c("Less than others of the same age",
++                        "Same as others of the same age",
++                        "Greater than others of the same age") ,
++                        `short`= c("Less","Same","Greater"))
 > 
 > ## GLOW500
 > ## -------
@@ -7,10 +11,6 @@
 +                       as.is = TRUE,
 +                       header = TRUE)
 > names(glow500) <- tolower(names(glow500))
-> raterisk.label <- list(`long` = c("Less than others of the same age",
-+                        "Same as others of the same age",
-+                        "Greater than others of the same age") ,
-+                        `short`= c("Less","Same","Greater"))
 > 
 > glow500 <- within(glow500, {
 +   priorfrac <- noYes(priorfrac)
@@ -103,4 +103,185 @@
           
 > 
 > save("glow11m", file = "../data/glow11m.rda")
+> 
+> 
+> ## GLOW_BONEMED
+> ## -------
+> glow_bonemed <- read.table(file = "GLOW/GLOW_BONEMED.txt",
++                       as.is = TRUE,
++                       header = TRUE)
+> names(glow_bonemed) <- tolower(names(glow_bonemed))
+> 
+> glow_bonemed <- within(glow_bonemed, {
++   priorfrac <- noYes(priorfrac)
++   premeno <- noYes(premeno)
++   momfrac <- noYes(momfrac)
++   armassist <- noYes(armassist)
++   smoke <- noYes(smoke)
++   raterisk <- factor(raterisk, levels = o3,
++                      labels = raterisk.label[["short"]])
++   fracture <- noYes(fracture)
++   bonemed <- noYes(bonemed)
++   bonemed_fu <- noYes(bonemed_fu)
++   bonetreat <- factor(((bonemed %in% "Yes") & (bonemed_fu %in% "Yes")),
++                       levels = c(FALSE, TRUE),
++                       labels = no.yes.label
++                       )
++ })
+> 
+> glow_bonemed <- glow_bonemed[order(glow_bonemed$sub_id), ]
+> rownames(glow_bonemed) <- NULL
+> dim(glow_bonemed)
+[1] 500  18
+> summary(glow_bonemed)
+     sub_id         site_id          phy_id       priorfrac      age       
+ Min.   :  1.0   Min.   :1.000   Min.   :  1.00   No :374   Min.   :55.00  
+ 1st Qu.:125.8   1st Qu.:2.000   1st Qu.: 57.75   Yes:126   1st Qu.:61.00  
+ Median :250.5   Median :3.000   Median :182.50             Median :67.00  
+ Mean   :250.5   Mean   :3.436   Mean   :178.55             Mean   :68.56  
+ 3rd Qu.:375.2   3rd Qu.:5.000   3rd Qu.:298.00             3rd Qu.:76.00  
+ Max.   :500.0   Max.   :6.000   Max.   :325.00             Max.   :90.00  
+     weight           height           bmi        premeno   momfrac   armassist
+ Min.   : 39.90   Min.   :134.0   Min.   :14.88   No :403   No :435   No :312  
+ 1st Qu.: 59.90   1st Qu.:157.0   1st Qu.:23.27   Yes: 97   Yes: 65   Yes:188  
+ Median : 68.00   Median :161.5   Median :26.42                                
+ Mean   : 71.82   Mean   :161.4   Mean   :27.55                                
+ 3rd Qu.: 81.30   3rd Qu.:165.0   3rd Qu.:30.79                                
+ Max.   :127.00   Max.   :199.0   Max.   :49.08                                
+ smoke        raterisk     fracscore      fracture  bonemed   bonemed_fu
+ No :465   Less   :167   Min.   : 0.000   No :375   No :371   No :361   
+ Yes: 35   Same   :186   1st Qu.: 2.000   Yes:125   Yes:129   Yes:139   
+           Greater:147   Median : 3.000                                 
+                         Mean   : 3.698                                 
+                         3rd Qu.: 5.000                                 
+                         Max.   :11.000                                 
+ bonetreat
+ No :382  
+ Yes:118  
+          
+          
+          
+          
+> 
+> save("glow_bonemed", file = "../data/glow_bonemed.rda")
+> 
+> ## GLOW_MIS_COMP
+> ## -------
+> glow_mis_comp <- read.table(file = "GLOW/GLOW_MIS_Comp_Data.txt",
++                       as.is = TRUE,
++                       header = TRUE)
+> names(glow_mis_comp) <- tolower(names(glow_mis_comp))
+> 
+> glow_mis_comp <- within(glow_mis_comp, {
++   priorfrac <- noYes(priorfrac)
++   momfrac <- noYes(momfrac)
++   raterisk <- factor(raterisk, levels = o3,
++                      labels = raterisk.label[["short"]])
++   fracture <- noYes(fracture)
++ })
+> glow_mis_comp <- glow_mis_comp[order(glow_mis_comp$sub_id), ]
+> rownames(glow_mis_comp) <- NULL
+> dim(glow_mis_comp)
+[1] 500  10
+> summary(glow_mis_comp)
+     sub_id         site_id          phy_id       priorfrac      age       
+ Min.   :  1.0   Min.   :1.000   Min.   :  1.00   No :374   Min.   :55.00  
+ 1st Qu.:125.8   1st Qu.:2.000   1st Qu.: 57.75   Yes:126   1st Qu.:61.00  
+ Median :250.5   Median :3.000   Median :182.50             Median :67.00  
+ Mean   :250.5   Mean   :3.436   Mean   :178.55             Mean   :68.56  
+ 3rd Qu.:375.2   3rd Qu.:5.000   3rd Qu.:298.00             3rd Qu.:76.00  
+ Max.   :500.0   Max.   :6.000   Max.   :325.00             Max.   :90.00  
+     weight           height      momfrac      raterisk   fracture 
+ Min.   : 39.90   Min.   :134.0   No :435   Less   :167   No :375  
+ 1st Qu.: 59.90   1st Qu.:157.0   Yes: 65   Same   :186   Yes:125  
+ Median : 68.00   Median :161.5             Greater:147            
+ Mean   : 71.82   Mean   :161.4                                    
+ 3rd Qu.: 81.30   3rd Qu.:165.0                                    
+ Max.   :127.00   Max.   :199.0                                    
+> 
+> save("glow_mis_comp", file = "../data/glow_mis_comp.rda")
+> 
+> ## GLOW_MIS_WMISSING
+> ## -------
+> glow_mis_wmissing <- read.delim(file = "GLOW/GLOW_MIS_WMissing_Data.txt",
++                       as.is = TRUE,
++                       header = TRUE)
+> names(glow_mis_wmissing) <- tolower(names(glow_mis_wmissing))
+> 
+> glow_mis_wmissing <- within(glow_mis_wmissing, {
++   priorfrac <- noYes(priorfrac)
++   momfrac <- noYes(momfrac)
++   raterisk <- factor(raterisk, levels = o3,
++                      labels = raterisk.label[["short"]])
++   fracture <- noYes(fracture)
++ })
+> glow_mis_wmissing <- glow_mis_wmissing[order(glow_mis_wmissing$sub_id), ]
+> rownames(glow_mis_wmissing) <- NULL
+> dim(glow_mis_wmissing)
+[1] 500  10
+> summary(glow_mis_wmissing)
+     sub_id         site_id          phy_id       fracture       age       
+ Min.   :  1.0   Min.   :1.000   Min.   :  1.00   No :375   Min.   :55.00  
+ 1st Qu.:125.8   1st Qu.:2.000   1st Qu.: 57.75   Yes:125   1st Qu.:60.75  
+ Median :250.5   Median :3.000   Median :182.50             Median :67.00  
+ Mean   :250.5   Mean   :3.436   Mean   :178.55             Mean   :68.49  
+ 3rd Qu.:375.2   3rd Qu.:5.000   3rd Qu.:298.00             3rd Qu.:76.00  
+ Max.   :500.0   Max.   :6.000   Max.   :325.00             Max.   :90.00  
+                                                            NA's   :100    
+     weight           height      momfrac       raterisk   priorfrac 
+ Min.   : 39.90   Min.   :134.0   No  :352   Less   :129   No  :294  
+ 1st Qu.: 59.90   1st Qu.:157.0   Yes : 48   Same   :143   Yes :106  
+ Median : 68.90   Median :162.0   NA's:100   Greater:128   NA's:100  
+ Mean   : 72.06   Mean   :161.4              NA's   :100             
+ 3rd Qu.: 81.60   3rd Qu.:165.0                                      
+ Max.   :127.00   Max.   :199.0                                      
+ NA's   :100      NA's   :100                                        
+> 
+> save("glow_mis_wmissing", file = "../data/glow_mis_wmissing.rda")
+> 
+> ## GLOW_RAND
+> ## -------
+> glow_rand <- read.delim(file = "GLOW/GLOW_RAND.txt",
++                       as.is = TRUE,
++                       header = TRUE)
+> names(glow_rand) <- tolower(names(glow_rand))
+> 
+> glow_rand <- within(glow_rand, {
++   priorfrac <- noYes(priorfrac)
++   premeno <- noYes(premeno)
++   momfrac <- noYes(momfrac)
++   armassist <- noYes(armassist)
++   smoke <- noYes(smoke)
++   raterisk <- factor(raterisk, levels = o3,
++                      labels = raterisk.label[["short"]])
++   fracture <- noYes(fracture)
++ })
+> glow_rand <- glow_rand[order(glow_rand$sub_id), ]
+> rownames(glow_rand) <- NULL
+> dim(glow_rand)
+[1] 500  15
+> summary(glow_rand)
+     sub_id         site_id          phy_id      priorfrac      age       
+ Min.   :  1.0   Min.   :1.000   Min.   :  1.0   No :359   Min.   :55.00  
+ 1st Qu.:125.8   1st Qu.:2.000   1st Qu.: 53.0   Yes:141   1st Qu.:61.00  
+ Median :250.5   Median :3.000   Median :139.0             Median :67.00  
+ Mean   :250.5   Mean   :3.236   Mean   :163.9             Mean   :68.62  
+ 3rd Qu.:375.2   3rd Qu.:5.000   3rd Qu.:294.0             3rd Qu.:75.00  
+ Max.   :500.0   Max.   :6.000   Max.   :325.0             Max.   :90.00  
+     weight           height           bmi        premeno   momfrac   armassist
+ Min.   : 38.10   Min.   :142.2   Min.   :15.40   No :409   No :432   No :309  
+ 1st Qu.: 60.80   1st Qu.:157.5   1st Qu.:23.30   Yes: 91   Yes: 68   Yes:191  
+ Median : 70.30   Median :162.6   Median :26.60                                
+ Mean   : 71.79   Mean   :161.9   Mean   :27.36                                
+ 3rd Qu.: 79.80   3rd Qu.:165.1   3rd Qu.:30.50                                
+ Max.   :129.30   Max.   :182.9   Max.   :48.10                                
+ smoke        raterisk     fracscore      fracture 
+ No :469   Less   :137   Min.   : 0.000   No :375  
+ Yes: 31   Same   :210   1st Qu.: 2.000   Yes:125  
+           Greater:153   Median : 3.000            
+                         Mean   : 3.638            
+                         3rd Qu.: 5.000            
+                         Max.   :10.000            
+> 
+> save("glow_rand", file = "../data/glow_rand.rda")
 > 
