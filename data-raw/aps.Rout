@@ -4,13 +4,13 @@
 +                       as.is = TRUE,
 +                       header = TRUE)
 > names(aps) <- tolower(names(aps))
-> place.label <- c("Outpatient",
-+                  "Day Treatment",
-+                  "Intermediate Residential",
-+                  "Residential")
-> place3.label <- c("Outpatient or Day Treatment",
-+                   "Intermediate Residential",
-+                   "Residential")
+> place.label <- c("Out",
++                  "Day",
++                  "Int",
++                  "Res")
+> place3.label <- c("OutDay",
++                   "Int",
++                   "Res")
 > race.label <- c("White","Non-white")
 > gender.label <- c("Female", "Male")
 > neuro.label <- c("None", "Mild", "Moderate", "Severe")
@@ -35,34 +35,27 @@
 > dim(aps)
 [1] 508  14
 > summary(aps)
-       id                             place    
- Min.   :  1.0   Outpatient              :155  
- 1st Qu.:127.8   Day Treatment           :104  
- Median :254.5   Intermediate Residential:130  
- Mean   :254.5   Residential             :119  
- 3rd Qu.:381.2                                 
- Max.   :508.0                                 
-                         place3         age               race        gender   
- Outpatient or Day Treatment:259   Min.   :11.06   White    :230   Female:274  
- Intermediate Residential   :130   1st Qu.:12.92   Non-white:278   Male  :234  
- Residential                :119   Median :14.18                               
-                                   Mean   :14.27                               
-                                   3rd Qu.:15.51                               
-                                   Max.   :17.92                               
-      neuro             emot          danger        elope          los        
- None    :350   Not Severe:389   Unlikely: 54   No Risk:316   Min.   :  1.00  
- Mild    : 81   Severe    :119   Possible:101   At Risk:192   1st Qu.:  6.00  
- Moderate: 29                    Probable:141                 Median :  8.00  
- Severe  : 48                    Likely  :212                 Mean   : 21.83  
-                                                              3rd Qu.: 17.00  
-                                                              Max.   :305.00  
-     behav       custd      viol    
- Min.   :0.000   No :317   No :121  
- 1st Qu.:5.000   Yes:191   Yes:387  
- Median :6.000                      
- Mean   :5.878                      
- 3rd Qu.:7.000                      
- Max.   :9.000                      
+       id        place        place3         age               race    
+ Min.   :  1.0   Out:155   OutDay:259   Min.   :11.06   White    :230  
+ 1st Qu.:127.8   Day:104   Int   :130   1st Qu.:12.92   Non-white:278  
+ Median :254.5   Int:130   Res   :119   Median :14.18                  
+ Mean   :254.5   Res:119                Mean   :14.27                  
+ 3rd Qu.:381.2                          3rd Qu.:15.51                  
+ Max.   :508.0                          Max.   :17.92                  
+    gender         neuro             emot          danger        elope    
+ Female:274   None    :350   Not Severe:389   Unlikely: 54   No Risk:316  
+ Male  :234   Mild    : 81   Severe    :119   Possible:101   At Risk:192  
+              Moderate: 29                    Probable:141                
+              Severe  : 48                    Likely  :212                
+                                                                          
+                                                                          
+      los             behav       custd      viol    
+ Min.   :  1.00   Min.   :0.000   No :317   No :121  
+ 1st Qu.:  6.00   1st Qu.:5.000   Yes:191   Yes:387  
+ Median :  8.00   Median :6.000                      
+ Mean   : 21.83   Mean   :5.878                      
+ 3rd Qu.: 17.00   3rd Qu.:7.000                      
+ Max.   :305.00   Max.   :9.000                      
 > 
 > save("aps", file = "../data/aps.rda", compress = "bzip2")
 > 

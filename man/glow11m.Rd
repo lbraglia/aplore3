@@ -23,12 +23,11 @@ head(glow11m, n = 10)
 summary(glow11m)
 
 ## Table 7.2 p. 252
-if(require(survival)) {
-  mod7.2 <- clogit(as.numeric(fracture) ~ height + weight + bmi +
-                   priorfrac + premeno + momfrac + armassist + raterisk +
-                   strata(pair), data = glow11m)
-  summary(mod7.2)
-}
+library(survival)
+mod7.2 <- clogit(as.numeric(fracture) ~ height + weight + bmi +
+                 priorfrac + premeno + momfrac + armassist + raterisk +
+                 strata(pair), data = glow11m)
+summary(mod7.2)
 }
 \keyword{datasets}
 

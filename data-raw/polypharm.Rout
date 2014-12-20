@@ -11,7 +11,7 @@
 > numprim.label <- inptmhv3.label
 > gender.label <- c("Female", "Male")
 > race.label <- c("White", "Black", "Other")
-> ethnic.label <- c("Non-Hispanic", "Hispanic")
+> ethnic.label <- c("Non-Hisp", "Hispanic")
 >   
 > polypharm <- within(polypharm, {
 +   polypharmacy <- noYes(polypharmacy)
@@ -45,13 +45,13 @@
                                     NA's:  49                             
                                                                           
                                                                           
-          ethnic          age       
- Non-Hispanic:3458   Min.   : 1.17  
- Hispanic    :  42   1st Qu.: 9.67  
-                     Median :11.75  
-                     Mean   :11.65  
-                     3rd Qu.:13.75  
-                     Max.   :18.92  
+      ethnic          age       
+ Non-Hisp:3458   Min.   : 1.17  
+ Hispanic:  42   1st Qu.: 9.67  
+                 Median :11.75  
+                 Mean   :11.65  
+                 3rd Qu.:13.75  
+                 Max.   :18.92  
 > 
 > save("polypharm", file = "../data/polypharm.rda", compress = "bzip2")
 > 

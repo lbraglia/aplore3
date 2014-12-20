@@ -45,11 +45,9 @@
 #'
 #' ## Contrasts: Table 3.8 and 3.9 p. 60
 #' contrasts(glow500$raterisk) <- matrix(c(-1,-1,1,0,0,1), byrow= TRUE, ncol = 2)
-#' # by doing so we use a modified version of the dataset ...
-#' ls()
 #' summary(mod3.9 <- glm(fracture ~ raterisk, family = binomial,
 #'                       data = glow500))
-#' # cleaning ...
+#' # cleaning modified dataset ...
 #' rm(glow500)
 #'
 #' ## Table 5.1 pg 160 - Hosmer-Lemeshow test (with vcdExtra package)
@@ -57,41 +55,41 @@
 #'                           I(as.integer(raterisk) == 3) ,
 #'                family = binomial,
 #'                data = glow500)
-#' if(require(vcdExtra)) summary(HLtest(mod4.16))
+#' library(vcdExtra)
+#' summary(HLtest(mod4.16))
 #'
 #' ## Table 5.3 p. 171 - Classification table
 #' glow500$pred4.16 <- predict(mod4.16, type = "response")
 #' with(glow500, addmargins(table( pred4.16 > 0.5, fracture)))
 #'
 #' ## Sensitivy, specificity, ROC (using pROC)
-#' if(require(pROC)){
+#' library(pROC)
 #'
-#'   ## Figure 5.3 p. 177 - ROC curve (using pROC package)
-#'   print(roc4.16 <- roc(fracture ~ pred4.16, data = glow500))
-#'   plot(roc4.16, main = "Figure 5.3 p. 177")
+#' ## Figure 5.3 p. 177 - ROC curve (using pROC package)
+#' print(roc4.16 <- roc(fracture ~ pred4.16, data = glow500))
+#' plot(roc4.16, main = "Figure 5.3 p. 177")
 #'
-#'   ## Table 5.8 p. 175
-#'   vars <- c("thresholds","sensitivities","specificities")
-#'   tab5.8 <- data.frame(roc4.16[vars])
-#'   ## Now, for printing/comparison purposes, steps below in order to find
-#'   ## threshold values most similar to those in the table
-#'   findIndex <- function(x, y) which.min( (x-y)^2 )
-#'   cutPoints <- seq(0.05, 0.75, by = 0.05)
-#'   tableIndex <- mapply(findIndex, y = cutPoints,
-#'                        MoreArgs = list(x = roc4.16$thresholds))
-#'   ## And finally, let's print a reasonable approximation of table 5.8
-#'   writeLines("\nTable 5.8 p. 175\n")
-#'   print(tab5.8[tableIndex, ])
+#' ## Table 5.8 p. 175
+#' vars <- c("thresholds","sensitivities","specificities")
+#' tab5.8 <- data.frame(roc4.16[vars])
+#' ## Now, for printing/comparison purposes, steps below in order to find
+#' ## threshold values most similar to those in the table
+#' findIndex <- function(x, y) which.min( (x-y)^2 )
+#' cutPoints <- seq(0.05, 0.75, by = 0.05)
+#' tableIndex <- mapply(findIndex, y = cutPoints,
+#'                      MoreArgs = list(x = roc4.16$thresholds))
+#' ## And finally, let's print a reasonable approximation of table 5.8
+#' writeLines("\nTable 5.8 p. 175\n")
+#' tab5.8[tableIndex, ]
 #'
-#'   ## Figure 5.1 p. 175
-#'   plot(specificities ~ thresholds, xlim = c(0, 1), type = "l",
-#'        xlab = "Probabilty cutoff", ylab = "Sensitivity/specificity",
-#'        ylim = c(0, 1), data = tab5.8, main = "Figure 5.1 p. 175")
-#'   with(tab5.8, lines(thresholds, sensitivities, col = "red"))
-#'   legend(x = 0.75, y = 0.55, legend = c("Sensitivity", "Specificity"),
-#'          lty = 1, col = c("red","black"))
-#'   abline(h = c(0, 1), col = "grey80", lty = "dotted")
-#' }
+#' ## Figure 5.1 p. 175
+#' plot(specificities ~ thresholds, xlim = c(0, 1), type = "l",
+#'      xlab = "Probabilty cutoff", ylab = "Sensitivity/specificity",
+#'      ylim = c(0, 1), data = tab5.8, main = "Figure 5.1 p. 175")
+#' with(tab5.8, lines(thresholds, sensitivities, col = "red"))
+#' legend(x = 0.75, y = 0.55, legend = c("Sensitivity", "Specificity"),
+#'        lty = 1, col = c("red","black"))
+#' abline(h = c(0, 1), col = "grey80", lty = "dotted")
 "glow500"
 
 #' GLOW11M data
@@ -110,12 +108,11 @@
 #' summary(glow11m)
 #'
 #' ## Table 7.2 p. 252
-#' if(require(survival)) {
-#'   mod7.2 <- clogit(as.numeric(fracture) ~ height + weight + bmi +
-#'                    priorfrac + premeno + momfrac + armassist + raterisk +
-#'                    strata(pair), data = glow11m)
-#'   summary(mod7.2)
-#' }
+#' library(survival)
+#' mod7.2 <- clogit(as.numeric(fracture) ~ height + weight + bmi +
+#'                  priorfrac + premeno + momfrac + armassist + raterisk +
+#'                  strata(pair), data = glow11m)
+#' summary(mod7.2)
 "glow11m"
 
 

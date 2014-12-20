@@ -15,7 +15,7 @@ ph.label <- c(">= 7.25","< 7.25")
 pco.label <- c("<= 45", "> 45")
 bic.label <- c(">= 18", "< 18")
 cre.label <- c("<= 2.0", "> 2.0")
-loc.label <- c("No coma or deep stupor", "Deep stupor", "Coma")
+loc.label <- c("Nothing", "Stupor", "Coma")
 
 icu <- within(icu, {
   sta <- factor(sta, levels = z1, labels = sta.label)

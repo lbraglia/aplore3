@@ -15,7 +15,7 @@
 > pco.label <- c("<= 45", "> 45")
 > bic.label <- c(">= 18", "< 18")
 > cre.label <- c("<= 2.0", "> 2.0")
-> loc.label <- c("No coma or deep stupor", "Deep stupor", "Coma")
+> loc.label <- c("Nothing", "Stupor", "Coma")
 > 
 > icu <- within(icu, {
 +   sta <- factor(sta, levels = z1, labels = sta.label)
@@ -62,13 +62,13 @@
  Mean   : 98.92                                                                
  3rd Qu.:118.25                                                                
  Max.   :192.00                                                                
-    pco         bic          cre                          loc     
- <= 45:180   >= 18:185   <= 2.0:190   No coma or deep stupor:185  
- > 45 : 20   < 18 : 15   > 2.0 : 10   Deep stupor           :  5  
-                                      Coma                  : 10  
-                                                                  
-                                                                  
-                                                                  
+    pco         bic          cre           loc     
+ <= 45:180   >= 18:185   <= 2.0:190   Nothing:185  
+ > 45 : 20   < 18 : 15   > 2.0 : 10   Stupor :  5  
+                                      Coma   : 10  
+                                                   
+                                                   
+                                                   
 > 
 > save("icu", file = "../data/icu.rda", compress = "bzip2")
 > 

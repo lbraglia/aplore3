@@ -4,13 +4,13 @@ aps <- read.table(file = "APS/APS.txt",
                       as.is = TRUE,
                       header = TRUE)
 names(aps) <- tolower(names(aps))
-place.label <- c("Outpatient",
-                 "Day Treatment",
-                 "Intermediate Residential",
-                 "Residential")
-place3.label <- c("Outpatient or Day Treatment",
-                  "Intermediate Residential",
-                  "Residential")
+place.label <- c("Out",
+                 "Day",
+                 "Int",
+                 "Res")
+place3.label <- c("OutDay",
+                  "Int",
+                  "Res")
 race.label <- c("White","Non-white")
 gender.label <- c("Female", "Male")
 neuro.label <- c("None", "Mild", "Moderate", "Severe")

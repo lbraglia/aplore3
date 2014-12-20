@@ -11,7 +11,7 @@ urban.label <- c("Urban", "Rural")
 numprim.label <- inptmhv3.label
 gender.label <- c("Female", "Male")
 race.label <- c("White", "Black", "Other")
-ethnic.label <- c("Non-Hispanic", "Hispanic")
+ethnic.label <- c("Non-Hisp", "Hispanic")
   
 polypharm <- within(polypharm, {
   polypharmacy <- noYes(polypharmacy)
