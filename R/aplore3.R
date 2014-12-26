@@ -5,8 +5,8 @@
 #' Logistic Regression" by D.W. Hosmer, S. Lemeshow and
 #' R.X. Sturdivant (3rd ed.).
 #'
-#' It includes all the datasets used in the book, both for easy reproducibility
-#' (assuming a didactic point of view) and algorithms benchmarking purposes.
+#' It includes all the datasets used in the book, both for easy
+#' reproducibility and algorithms benchmarking purposes.
 #'
 #' Some analysis proposed in the text are reproduced in the examples,
 #' in order to provide data testing and code demos at the same time.
