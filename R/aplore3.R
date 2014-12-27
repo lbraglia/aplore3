@@ -1,9 +1,9 @@
 #' Datasets from Hosmer, Lemeshow and Sturdivant, "Applied Logistic
-#' Regression" (3rd ed.)
+#' Regression" (3rd ed., 2013)
 #'
-#' This package is a unofficial companion to the textbook "Applied
+#' This package is an unofficial companion to the textbook "Applied
 #' Logistic Regression" by D.W. Hosmer, S. Lemeshow and
-#' R.X. Sturdivant (3rd ed.).
+#' R.X. Sturdivant (3rd ed., 2013).
 #'
 #' It includes all the datasets used in the book, both for easy
 #' reproducibility and algorithms benchmarking purposes.
