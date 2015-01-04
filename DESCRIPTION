@@ -3,7 +3,7 @@ Title: Datasets from Hosmer, Lemeshow and Sturdivant, "Applied Logistic
     Regression" (3rd ed., 2013)
 Version: 0.8
 Date: 2014-12-26
-Authors@R: "Luca Braglia <lbraglia@gmail.com> [aut, cre]"
+Authors@R: as.person("Luca Braglia <lbraglia@gmail.com> [aut, cre]")
 Description: This package is an unofficial companion to the textbook "Applied
     Logistic Regression" by D.W. Hosmer, S. Lemeshow and
     R.X. Sturdivant (3rd ed., 2013). See ?aplore3 for more info.
