@@ -5,7 +5,7 @@
 #' @format A data.frame with 200 rows and 21 variables:
 #' \describe{
 #' \item{id}{Identification code (ID Number)}
-#' \item{sta}{Vital Status at hospital discharge (1: Died, 2: Lived)}
+#' \item{sta}{Vital Status at hospital discharge (1: Lived, 2: Died)}
 #' \item{age}{Age (Years)}
 #' \item{gender}{Gender (1: Male, 2: Female)}
 #' \item{race}{Race (1: White, 2: Black, 3: Other)}
