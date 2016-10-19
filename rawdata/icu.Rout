@@ -5,7 +5,7 @@
 +                       header = TRUE)
 > names(icu) <- tolower(names(icu))
 > names(icu)[14] <- "type"
-> sta.label <- c("Died","Lived")
+> sta.label <- c("Lived", "Died")
 > gender.label <- c("Male", "Female")
 > race.label <- c("White","Black","Other")
 > ser.label <- c("Medical","Surgical")
@@ -42,8 +42,8 @@
 [1] 200  21
 > summary(icu)
        id           sta           age           gender       race    
- Min.   :  4.0   Died :160   Min.   :16.00   Male  :124   White:175  
- 1st Qu.:210.2   Lived: 40   1st Qu.:46.75   Female: 76   Black: 15  
+ Min.   :  4.0   Lived:160   Min.   :16.00   Male  :124   White:175  
+ 1st Qu.:210.2   Died : 40   1st Qu.:46.75   Female: 76   Black: 15  
  Median :412.5               Median :63.00                Other: 10  
  Mean   :444.8               Mean   :57.55                           
  3rd Qu.:671.8               3rd Qu.:72.00                           

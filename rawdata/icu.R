@@ -5,7 +5,7 @@ icu <- read.table(file = "ICU/ICU.txt",
                       header = TRUE)
 names(icu) <- tolower(names(icu))
 names(icu)[14] <- "type"
-sta.label <- c("Died","Lived")
+sta.label <- c("Lived", "Died")
 gender.label <- c("Male", "Female")
 race.label <- c("White","Black","Other")
 ser.label <- c("Medical","Surgical")

@@ -1,8 +1,7 @@
 Package: aplore3
 Title: Datasets from Hosmer, Lemeshow and Sturdivant, "Applied Logistic
     Regression" (3rd ed., 2013)
-Version: 0.8
-Date: 2014-12-26
+Version: 0.9
 Authors@R: as.person("Luca Braglia <lbraglia@gmail.com> [aut, cre]")
 Description: This package is an unofficial companion to the textbook "Applied
     Logistic Regression" by D.W. Hosmer, S. Lemeshow and
@@ -21,3 +20,4 @@ Suggests:
     nnet,
     survival,
     pROC
+RoxygenNote: 5.0.1
