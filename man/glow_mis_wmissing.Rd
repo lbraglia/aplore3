@@ -4,9 +4,11 @@
 \name{glow_mis_wmissing}
 \alias{glow_mis_wmissing}
 \title{GLOW_MIS_WMISSING data}
-\format{A data.frame with 500 rows and 10 variables: the covariate are
+\format{
+A data.frame with 500 rows and 10 variables: the covariate are
 the same as those from \code{\link{glow500}}, without \code{bmi},
-\code{premeno}, \code{armassist}, \code{smoke} and \code{fracscore}.}
+\code{premeno}, \code{armassist}, \code{smoke} and \code{fracscore}.
+}
 \source{
 Hosmer, D.W., Lemeshow, S. and Sturdivant, R.X. (2013) Applied
 Logistic Regression, 3rd ed., New York: Wiley
@@ -22,4 +24,3 @@ head(glow_mis_wmissing, n = 10)
 summary(glow_mis_wmissing)
 }
 \keyword{datasets}
-

@@ -4,7 +4,8 @@
 \name{aps}
 \alias{aps}
 \title{APS data}
-\format{A data.frame with 508 rows and 11 variables:
+\format{
+A data.frame with 508 rows and 11 variables:
 \describe{
 \item{id}{Identification Code (1 - 508)}
 \item{place}{Placement (1: Outpatient, 2: Day Treatment, 3:
@@ -24,7 +25,8 @@ Possible, 3: Probable, 4: Likely)}
 \item{behav}{Behavioral Symptoms Score (0 - 9)}
 \item{custd}{State Custody (1: No, 2: Yes)}
 \item{viol}{History of Violence (1: No, 2: Yes)}
-}}
+}
+}
 \source{
 Hosmer, D.W., Lemeshow, S. and Sturdivant, R.X. (2013) Applied
 Logistic Regression, 3rd ed., New York: Wiley
@@ -60,4 +62,3 @@ anova(modt8.2, modt8.2Null, test = "Chisq")
 
 }
 \keyword{datasets}
-

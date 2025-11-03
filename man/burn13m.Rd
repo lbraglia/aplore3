@@ -4,12 +4,14 @@
 \name{burn13m}
 \alias{burn13m}
 \title{BURN13M data}
-\format{A data.frame with 388 rows and 11 variables: the covariate are
+\format{
+A data.frame with 388 rows and 11 variables: the covariate are
 the same as those from \code{\link{burn1000}} with the addition of
 \describe{
 \item{pair}{Pair Identification Code (1-119)}
 \item{pairid}{Subject Identification Code within pair (1-4)}
-}}
+}
+}
 \source{
 Hosmer, D.W., Lemeshow, S. and Sturdivant, R.X. (2013) Applied
 Logistic Regression, 3rd ed., New York: Wiley
@@ -25,4 +27,3 @@ head(burn13m, n = 10)
 summary(burn13m)
 }
 \keyword{datasets}
-

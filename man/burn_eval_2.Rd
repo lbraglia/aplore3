@@ -4,8 +4,10 @@
 \name{burn_eval_2}
 \alias{burn_eval_2}
 \title{BURN_EVAL_2 data}
-\format{A data.frame with 500 rows and 9 variables: the covariate are
-the same as those from \code{\link{burn1000}}.}
+\format{
+A data.frame with 500 rows and 9 variables: the covariate are
+the same as those from \code{\link{burn1000}}.
+}
 \source{
 Hosmer, D.W., Lemeshow, S. and Sturdivant, R.X. (2013) Applied
 Logistic Regression, 3rd ed., New York: Wiley
@@ -21,4 +23,3 @@ head(burn_eval_2, n = 10)
 summary(burn_eval_2)
 }
 \keyword{datasets}
-

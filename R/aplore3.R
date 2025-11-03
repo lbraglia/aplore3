@@ -23,7 +23,6 @@
 #' as.integer, especially for multinomial variables. 
 #' 
 #' @name aplore3
-#' @docType package
 #' @source Hosmer, D.W., Lemeshow, S. and Sturdivant, R.X. (2013) Applied
 #'         Logistic Regression, 3rd ed., New York: Wiley
 NULL

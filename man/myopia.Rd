@@ -4,7 +4,8 @@
 \name{myopia}
 \alias{myopia}
 \title{MYOPIA data}
-\format{A data.frame with 618 rows and 18 variables:
+\format{
+A data.frame with 618 rows and 18 variables:
 \describe{
 \item{id}{Subject identifier (1-1503)}
 \item{studyyear}{Year subject entered the study (Year)}
@@ -25,7 +26,8 @@ engaging in sports/outdoor activities (Hours per week)}
 \item{diopterhr}{Composite of near-work activities (Hours per week)}
 \item{mommy}{Was the subject's mother myopic? (1: No, 2: Yes)}
 \item{dadmy}{Was the subject's father myopic? (1: No, 2: Yes)}
-}}
+}
+}
 \source{
 Hosmer, D.W., Lemeshow, S. and Sturdivant, R.X. (2013) Applied
 Logistic Regression, 3rd ed., New York: Wiley
@@ -41,4 +43,3 @@ head(myopia, n = 10)
 summary(myopia)
 }
 \keyword{datasets}
-

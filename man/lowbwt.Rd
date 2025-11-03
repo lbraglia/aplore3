@@ -4,7 +4,8 @@
 \name{lowbwt}
 \alias{lowbwt}
 \title{LOWBWT data}
-\format{A data.frame with 189 rows and 11 variables:
+\format{
+A data.frame with 189 rows and 11 variables:
 \describe{
 \item{id}{Identification Code}
 \item{low}{Low birth weight (1: >= 2500, 2: < 2500 g)}
@@ -18,7 +19,8 @@
 \item{ftv}{Number of physician visits during the first trimester (1:
 None, 2: One, 3: Two, etc)} 
 \item{bwt}{Recorded birth weight (Grams)}
-}}
+}
+}
 \source{
 Hosmer, D.W., Lemeshow, S. and Sturdivant, R.X. (2013) Applied
 Logistic Regression, 3rd ed., New York: Wiley
@@ -34,4 +36,3 @@ head(lowbwt, n = 10)
 summary(lowbwt)
 }
 \keyword{datasets}
-

@@ -4,7 +4,8 @@
 \name{burn1000}
 \alias{burn1000}
 \title{BURN1000 data}
-\format{A data.frame with 1000 rows and 9 variables:
+\format{
+A data.frame with 1000 rows and 9 variables:
 \describe{
 \item{id}{Identification code (1 - 1000)}
 \item{facility}{Burn facility (1 - 40)}
@@ -15,7 +16,8 @@
 \item{tbsa}{Total burn surface area (0 - 100\%)}
 \item{inh_inj}{Burn involved inhalation injury (1: No, 2: Yes)}
 \item{flame}{Flame involved in burn injury (1: No, 2: Yes)}
-}}
+}
+}
 \source{
 Hosmer, D.W., Lemeshow, S. and Sturdivant, R.X. (2013) Applied
 Logistic Regression, 3rd ed., New York: Wiley
@@ -35,4 +37,3 @@ summary(mod3.15 <- glm(death ~ tbsa + inh_inj + age + gender + flame + race,
                        family = binomial, data = burn1000 ))
 }
 \keyword{datasets}
-

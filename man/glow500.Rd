@@ -4,7 +4,8 @@
 \name{glow500}
 \alias{glow500}
 \title{GLOW500 data}
-\format{A data.frame with 500 rows and 15 variables:
+\format{
+A data.frame with 500 rows and 15 variables:
 \describe{
 \item{sub_id}{Identification Code (1 - n)}
 \item{site_id}{Study Site (1 - 6)}
@@ -23,7 +24,8 @@ the same age, 2: Same as others of the same age, 3: Greater than others
 of the same age)}
 \item{fracscore}{Fracture Risk Score (Composite Risk Score)}
 \item{fracture}{Any fracture in first year (1: No, 2: Yes)}
-}}
+}
+}
 \source{
 Hosmer, D.W., Lemeshow, S. and Sturdivant, R.X. (2013) Applied
 Logistic Regression, 3rd ed., New York: Wiley
@@ -89,7 +91,7 @@ cutPoints <- seq(0.05, 0.75, by = 0.05)
 tableIndex <- mapply(findIndex, y = cutPoints,
                      MoreArgs = list(x = roc4.16$thresholds))
 ## And finally, let's print a reasonable approximation of table 5.8
-writeLines("\\nTable 5.8 p. 175\\n")
+writeLines("\nTable 5.8 p. 175\n")
 tab5.8[tableIndex, ]
 
 ## Figure 5.1 p. 175
@@ -102,4 +104,3 @@ legend(x = 0.75, y = 0.55, legend = c("Sensitivity", "Specificity"),
 abline(h = c(0, 1), col = "grey80", lty = "dotted")
 }
 \keyword{datasets}
-

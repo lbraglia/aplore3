@@ -20,4 +20,4 @@ Suggests:
     nnet,
     survival,
     pROC
-RoxygenNote: 5.0.1
+RoxygenNote: 7.3.3

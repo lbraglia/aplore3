@@ -4,7 +4,8 @@
 \name{polypharm}
 \alias{polypharm}
 \title{POLYPHARM data}
-\format{A data.frame with 3500 rows and 14 variables:
+\format{
+A data.frame with 3500 rows and 14 variables:
 \describe{
 \item{id}{Subject ID (1 - 500)}
 \item{polypharmacy}{Outcome; taking drugs from more than three different
@@ -26,7 +27,8 @@ than one)}
 \item{race}{Race (1: White, 2: Black, 3: Other)}
 \item{ethnic}{Ethnic category (1: Non-Hispanic, 2: Hispanic)}
 \item{age}{Age (Years and months, two decimal places)}
-}}
+}
+}
 \source{
 Hosmer, D.W., Lemeshow, S. and Sturdivant, R.X. (2013) Applied
 Logistic Regression, 3rd ed., New York: Wiley
@@ -42,4 +44,3 @@ head(polypharm, n = 10)
 summary(polypharm)
 }
 \keyword{datasets}
-

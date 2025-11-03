@@ -4,14 +4,16 @@
 \name{chdage}
 \alias{chdage}
 \title{CHDAGE data}
-\format{A data.frame with 100 rows and 4 variables:
+\format{
+A data.frame with 100 rows and 4 variables:
 \describe{
 \item{id}{Identification code (1 - 100)}
 \item{age}{Age (Years)}
 \item{agegrp}{Age group (1: 20-39, 2: 30-34, 3: 35-39, 4: 40-44, 5:
 45-49, 6: 50-54, 7: 55-59, 8: 60-69)}  
 \item{chd}{Presence of CHD (1: No, 2: Yes)}
-}}
+}
+}
 \source{
 Hosmer, D.W., Lemeshow, S. and Sturdivant, R.X. (2013) Applied
 Logistic Regression, 3rd ed., New York: Wiley
@@ -58,4 +60,3 @@ exp(coef(mod1.3))[-1]
 exp(confint(mod1.3))[-1, ]
 }
 \keyword{datasets}
-

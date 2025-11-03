@@ -4,8 +4,10 @@
 \name{glow_rand}
 \alias{glow_rand}
 \title{GLOW_RAND data}
-\format{A data.frame with 500 rows and 15 variables: the covariate are
-the same as those from \code{\link{glow500}}.}
+\format{
+A data.frame with 500 rows and 15 variables: the covariate are
+the same as those from \code{\link{glow500}}.
+}
 \source{
 Hosmer, D.W., Lemeshow, S. and Sturdivant, R.X. (2013) Applied
 Logistic Regression, 3rd ed., New York: Wiley
@@ -21,4 +23,3 @@ head(glow_rand, n = 10)
 summary(glow_rand)
 }
 \keyword{datasets}
-

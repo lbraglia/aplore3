@@ -4,7 +4,8 @@
 \name{nhanes}
 \alias{nhanes}
 \title{NHANES data}
-\format{A data.frame with 6482 rows and 21 variables:
+\format{
+A data.frame with 6482 rows and 21 variables:
 \describe{
 \item{id}{Identification Code (1 - 6482)}
 \item{gender}{Gender (1: Male, 2: Female)}
@@ -28,7 +29,8 @@
 \item{modrecexr}{Moderate Recreational Activities (1: Yes, 2: No)}
 \item{sedmin}{Minutes of Sedentary Activity per Week (1: Yes, 2: No)}
 \item{obese}{BMI>35 (1: No, 2: Yes)}
-}}
+}
+}
 \source{
 Hosmer, D.W., Lemeshow, S. and Sturdivant, R.X. (2013) Applied
 Logistic Regression, 3rd ed., New York: Wiley
@@ -44,4 +46,3 @@ head(nhanes, n = 10)
 summary(nhanes)
 }
 \keyword{datasets}
-
